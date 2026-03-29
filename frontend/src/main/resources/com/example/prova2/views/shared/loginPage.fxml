@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="556.0" prefWidth="1000" styleClass="gradient-backgrounds4" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.login.LoginHomeController">
+
+   <!-- Logo in alto a sinistra -->
+   <ImageView fitHeight="55" fitWidth="55" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../images/DE25Logo.png" />
+      </image>
+   </ImageView>
+
+   <!-- Titolo App -->
+   <Label layoutX="634.0" layoutY="22.0" text="DietiEstates25" textFill="WHITE">
+      <font>
+         <Font name="Ebrima Bold" size="32" />
+      </font>
+   </Label>
+
+   <!-- Contenitore principale -->
+   <Pane layoutY="83.0" prefHeight="483.0" prefWidth="839.0" style="-fx-background-radius: 20;" styleClass="container2">
+
+      <!-- Login Utente -->
+      <VBox layoutX="40" layoutY="40" prefHeight="408.0" prefWidth="480.0" spacing="18">
+
+         <Label text="Effettua l'accesso con l'account DietiEstates25" textFill="#f3f6f4">
+            <font>
+               <Font name="Ebrima Bold" size="22" />
+            </font>
+         </Label>
+
+         <!-- Campo Email -->
+         <Label text="Email" textFill="#f3f6f4">
+            <font>
+               <Font name="System Bold" size="18" />
+            </font>
+         </Label>
+
+         <TextField fx:id="emailField" maxWidth="300" prefHeight="30.0" prefWidth="260.0" promptText="Inserisci la tua email" style="-fx-text-fill: white;" styleClass="textField" />
+         <!-- Campo Password -->
+         <Label text="Password" textFill="#f3f6f4">
+            <font>
+               <Font name="System Bold" size="18" />
+            </font>
+         </Label>
+         <StackPane maxWidth="300">
+            <PasswordField fx:id="passwordField"
+                           prefHeight="30"
+                           prefWidth="300"
+                           promptText="Inserisci la password"
+                           style="-fx-text-fill: white;"
+                           styleClass="textField"/>
+
+            <TextField fx:id="mostraPwd"
+                       prefHeight="30"
+                       prefWidth="300"
+                       promptText="Inserisci la password"
+                       style="-fx-text-fill: white;"
+                       styleClass="textField"
+                       visible="false"
+                       managed="false"/>
+         </StackPane>
+
+         <CheckBox fx:id="mostraPasswordCheckBox" onAction="#gestioneMostraPwd" text="Mostra password" textFill="WHITE" />
+
+         <!-- Riga con Bottone Accedi + Label + Bottone Google -->
+         <HBox alignment="CENTER_LEFT" prefHeight="40" spacing="15">
+            <Button fx:id="accediBtn" focusTraversable="false" onAction="#gestioneAccesso" prefHeight="35" prefWidth="120" style="-fx-font-size: 18; -fx-background-radius: 20; -fx-border-radius: 20; -fx-cursor: hand;" text="Accedi" textFill="#011638" />
+            <Label style="-fx-font-size: 16;" text="O accedi con" textFill="#f3f6f4" />
+            <Button onAction="#authGoogle" prefHeight="35.0" prefWidth="160.0" styleClass="social">
+               <graphic>
+                  <ImageView fitHeight="28" fitWidth="30">
+                     <Image url="@../../images/icons8-logo-di-google.png" />
+                  </ImageView>
+               </graphic>
+            </Button>
+         </HBox>
+
+         <!-- Link registrazione -->
+         <Label fx:id="registrazioneBtn" onMouseClicked="#apriPaginaRegistrazioneUtente" style="-fx-cursor: hand;" text="Non hai un account? Clicca qui per registrarti!" textFill="WHITE" underline="true" />
+         <Label fx:id="emailErrorLbl" text="Si prega di inserire un'email!" textFill="#F7F583" visible="false" />
+         <Label fx:id="pwdErrorLbl" text="Si prega di inserire una password!" textFill="#cacf40" visible="false" />
+
+      </VBox>
+
+      <!-- Login Gestore e Agente -->
+      <Button fx:id="btnAmministratore" layoutX="550.0" layoutY="170.0" onAction="#gestioneAmministratoreBtn" prefHeight="43.0" prefWidth="182.0" style="-fx-font-size: 18; -fx-background-radius: 20; -fx-border-radius: 20; -fx-cursor: hand;" text="Accesso gestore" textFill="#011638" />
+      <Button fx:id="buttonAgenteImmobiliare" layoutX="550.0" layoutY="269.0" onAction="#gestioneAgenteBtn" prefHeight="43.0" prefWidth="172.0" style="-fx-font-size: 18; -fx-background-radius: 20; -fx-border-radius: 20; -fx-cursor: hand;" text="Accesso agente" textFill="#011638" />
+
+      <Label layoutX="550.0" layoutY="230.0" prefHeight="32.0" prefWidth="286.0" text="Sei un agente immobiliare?" textFill="#f3f6f4">
+         <font>
+            <Font name="Ebrima Bold" size="22" />
+         </font>
+      </Label>
+
+      <Label layoutX="550.0" layoutY="130.0" text="Sei un gestore?" textFill="#f3f6f4">
+         <font>
+            <Font name="Ebrima Bold" size="22" />
+         </font>
+      </Label>
+      <Line endX="319.2833557128906" endY="0.17500048875808716" layoutX="407.0" layoutY="236.0" rotate="94.4" scaleX="0.9" scaleY="0.5" startX="-72.76713562011719" startY="52.34010696411133" stroke="white" />
+
+   </Pane>
+
+</Pane>

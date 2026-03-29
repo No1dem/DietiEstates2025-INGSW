@@ -1,0 +1,179 @@
+/* Palette Verde Acqua:
+   Principale (Scuro): #145858
+   Accento (Medio): #20B2AA (LightSeaGreen)
+   Sfondo (Chiaro): #E0F2F1
+*/
+
+.gradient-backgrounds {
+    -fx-background-color: linear-gradient(from 100% 100% to 0% 0%, #145858, #E0F2F1);
+}
+
+.gradient-backgrounds2 {
+    -fx-background-color: linear-gradient(from 5% 5% to 100% 100%, #145858, #80CBC4);
+}
+
+.gradient-backgrounds3 {
+    -fx-background-color: linear-gradient(from 2% 2% to 100% 100%, #004D40, #aef1ec);
+}
+
+.gradient-backgrounds4 {
+    -fx-background-color: linear-gradient(from 50% 0% to 200% 100%, #145858, #E0F2F1);
+}
+
+.container {
+    -fx-background-color: rgba(224, 242, 241, 0.2);
+    -fx-background-radius: 10;
+}
+
+.container2 {
+    -fx-background-color: rgba(20, 88, 88, 0.2);
+    -fx-background-radius: 10;
+}
+
+.textField, .textFieldAnnunci {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 10;
+    -fx-text-fill: #fafafa;
+    -fx-prompt-text-fill: #ffffff;
+}
+
+.bottoneDimenticatoPassword {
+    -fx-cursor: hand;
+    -fx-text-fill: #145858;
+    -fx-underline: true;
+}
+
+.text-area-moderna {
+    /* Usa un colore semi-trasparente per simulare il tuo TextField */
+    -fx-background-color: rgba(255, 255, 255, 0.25); 
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 5;
+}
+
+/* Rende trasparente lo sfondo interno "bianco" di default */
+.text-area-moderna .scroll-pane,
+.text-area-moderna .scroll-pane .viewport,
+.text-area-moderna .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+/* Colore del testo e del prompt */
+.text-area-moderna .text {
+    -fx-fill: white;
+}
+.text-area-moderna {
+    -fx-prompt-text-fill: #cccccc;
+}
+
+.bottoneDimenticatoPassword:hover {
+    -fx-text-fill: #20B2AA;
+}
+
+.bottoneLoginAdmin {
+    -fx-text-fill: white;
+    -fx-background-color: #145858;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.bottoneLoginAdmin:hover, .bottoniVerdi:hover, .crea:hover, .btnAccettaInfo:hover {
+    -fx-background-color: #20B2AA; /* Effetto evidenziatore teal */
+}
+
+.bottoniVerdi, .bottoneModificaProfilo, .crea {
+    -fx-cursor: hand;
+    -fx-background-color: #26A69A;
+    -fx-background-radius: 15;
+    -fx-text-fill: white;
+}
+
+.paneImmobili:hover {
+    -fx-background-color: rgba(32, 178, 170, 0.1);
+}
+
+.bottoneTornaIndietro, .indietroCrea {
+    -fx-background-color: #E0F2F1;
+    -fx-text-fill: #145858;
+    -fx-cursor: hand;
+    -fx-background-radius: 20;
+    -fx-border-color: #145858;
+    -fx-border-radius: 20;
+}
+
+.buttonAggiornaRicerca {
+    -fx-background-color: #145858;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-background-radius: 0 0 60 0;
+}
+
+.PaneRicerca, .PaneAnnunciInfo {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-border-color: #168178;
+    -fx-border-width: 1;
+    -fx-border-radius: 10 10 10 60;
+    -fx-background-radius: 10 10 10 60;
+}
+
+.cerca {
+    -fx-background-radius: 12;
+    -fx-background-color: #145858;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.combo-box {
+    -fx-border-color: #145858;
+    -fx-background-color: #f0fdfc;
+}
+
+.btnRifiutoInfo {
+    -fx-background-color: #E57373; /* Mantenuto rossastro per il rifiuto, ma più soft */
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+
+.title-page {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #145858;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #145858;
+}
+
+.section-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #145858;
+}
+
+.content-box {
+    -fx-padding: 10 15 10 15;
+}
+
+.custom-scroll {
+    -fx-background-color: transparent;
+}
+
+#accediBtn {
+    -fx-background-color: #d3d3d3;
+    -fx-text-fill: #000000;
+    -fx-font-size: 18px;
+}
+#accediBtn:hover {
+    -fx-background-color: #ffffff;
+}
+
+.footer { -fx-background-color: #145858; }
+
+.footer-label { -fx-text-fill: #ecf0f1; }
+
+.footer-link { -fx-text-fill: white; -fx-font-weight: bold; }
+
+.footer-link:hover { -fx-text-fill: #0c7b7b; } /* Effetto al passaggio del mouse */
+

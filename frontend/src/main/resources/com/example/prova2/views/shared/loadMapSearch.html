@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <title>Leaflet Map Integration</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" type="text/javascript"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    #mapContainer {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<div id="mapContainer"></div>
+
+<script>
+  // 1. Dichiariamo la mappa GLOBALE in modo che le funzioni la vedano sempre
+  var map = null;
+  var currentMarker = null;
+
+  // 2. Inizializziamo solo la grafica al caricamento del DOM
+  document.addEventListener("DOMContentLoaded", function () {
+    // Creare la mappa centrata su Napoli
+    map = L.map('mapContainer').setView([40.8518, 14.2681], 12); 
+
+    // Aggiungere il layer della mappa di OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+  });
+
+  // 3. FUNZIONI ESPOSTE A JAVA (Fuori dal DOMContentLoaded per evitare il "bug della seconda volta")
+
+  // Funzione per posizionare un marker sulla mappa
+  window.placeMarker = function (latitude, longitude) {
+    if (!map) {
+      // Se la mappa non è pronta, aspetta 100ms e riprova!
+      setTimeout(function() { window.placeMarker(latitude, longitude); }, 100);
+      return;
+    }
+
+    if (currentMarker) {
+      map.removeLayer(currentMarker);
+    }
+
+    currentMarker = L.marker([latitude, longitude]).addTo(map);
+    map.setView([latitude, longitude], 13);
+    sendCoordinates(latitude, longitude);
+  };
+
+  // Funzione per i pin della Schermata Annuncio
+  window.addMarkerForAnnuncio = function (latcomune, lngcomune, lat, lng) {
+    if (!map) {
+      // Se la mappa non è pronta, aspetta 100ms e riprova!
+      setTimeout(function() { window.addMarkerForAnnuncio(latcomune, lngcomune, lat, lng); }, 100);
+      return;
+    }
+
+    // Aggiorna la vista della mappa
+    map.setView([lat, lng], 16);
+
+    // Crea e aggiunge il marker alla mappa
+    L.marker([lat, lng]).addTo(map);
+  };
+
+  // Funzione per i pin multipli della Schermata Ricerca
+  window.addMarker = function (latcomune, lngcomune, lat, lng, titolo, prezzo, descrizione, idImmobile) {
+    if (!map) {
+      // Se la mappa non è pronta, aspetta 100ms e riprova!
+      setTimeout(function() { window.addMarker(latcomune, lngcomune, lat, lng, titolo, prezzo, descrizione, idImmobile); }, 100);
+      return;
+    }
+
+    // Aggiorna la vista della mappa
+    map.setView([lat, lng], 14);
+
+    var marker = L.marker([lat, lng]).addTo(map);
+
+    // Crea un contenuto HTML personalizzato per il popup
+    var htmlPane = "<div style='width: 200px;'><strong>" + titolo + "</strong><br>"
+            + "<strong>Prezzo:</strong> " + prezzo + " &#8364<br>"
+            + "<strong>Descrizione:</strong> " + descrizione + "</div>";
+
+    // Popup compatto con contenuto HTML personalizzato
+    var popup = marker.bindPopup(htmlPane, {
+      maxWidth: 250,   // Larghezza massima della finestra popup
+      minWidth: 150,   // Larghezza minima
+      maxHeight: 200   // Altezza massima
+    });
+
+    // Apre il popup quando il marker viene cliccato
+    marker.on('click', function() {
+      marker.openPopup();
+      // Esegui lo scroll all'annuncio
+      scrollToAnnuncio(idImmobile);
+    });
+
+    // Rende il popup visibile al passaggio del mouse sopra il marker
+    marker.on('mouseover', function() {
+      if (!marker.isPopupOpen()) {
+        marker.openPopup();
+      }
+    });
+
+    // Chiude il popup quando il mouse esce dal marker
+    marker.on('mouseout', function() {
+      if (marker.isPopupOpen()) {
+        marker.closePopup();
+      }
+    });
+  };
+
+  // --- FUNZIONI DI SUPPORTO INTERNE ---
+
+  function sendCoordinates(lat, lon) {
+    const apiKey = 'f2pO_B6aRFHQ46i-7ZqWjnhevwe_b3Cm255BB4V04SI';
+    const url = `https://revgeocode.search.hereapi.com/v1/revgeocode?at=${lat},${lon}&apiKey=${apiKey}`;
+
+    fetch(url)
+            .then(response => response.json())
+            .then(data => {
+              if (data.items && data.items.length > 0) {
+                const address = data.items[0].address.label;
+                document.getElementById('addressText').innerText = address;
+                sendToJava(address);
+              } else {
+                console.error('Indirizzo non trovato.');
+              }
+            })
+            .catch(error => console.error('Error:', error));
+  }
+
+  function sendToJava(address) {
+    if (window.java) {
+      window.java.updateAddress(address);
+    }
+  }
+
+  function scrollToAnnuncio(idImmobile) {
+    var annuncioPane = document.getElementById('annunci_' + idImmobile);
+    if (annuncioPane) {
+      annuncioPane.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center' // Scorre l'annuncio al centro della vista
+      });
+    }
+  };
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: linear-gradient(to bottom, #FFF5F5, #3e838c);" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.SchermataRicercaController">
+   <children>
+      <AnchorPane styleClass="container" stylesheets="@../../css/style.css">
+         <children>
+            <AnchorPane layoutX="20.0" layoutY="18.0" prefHeight="82.0" prefWidth="1491.0" style="-fx-border-width: 5px;  -fx-border-color: #65898f; -fx-background-color: #426570;">
+                    <children>
+                        <Pane layoutX="-8.0" layoutY="-8.0" prefHeight="80.0" prefWidth="1496.0" style="-fx-background-color: #145858; -fx-border-width: 0;">
+                            <children>
+                                
+                                <Button fx:id="btnTornaHome" layoutX="7.0" layoutY="5.0" mnemonicParsing="false" onAction="#tornaHome" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                                    <graphic>
+                                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../images/DE25Logo.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+
+                                <Hyperlink fx:id="linkHome" layoutX="80.0" layoutY="21.0" onAction="#tornaHome" style="-fx-underline: false;" text="DietiEstates25" textFill="#fafafa">
+                                    <font>
+                                        <Font name="System Bold" size="22.0" />
+                                    </font>
+                                </Hyperlink>
+
+                                <Pane layoutX="1420.0" layoutY="20.0" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: #FFF5F5; -fx-border-color: #284650; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 1; -fx-cursor: hand;">
+                                    <children>
+                                        <Button fx:id="btnUserDashboard" layoutX="-5.0" layoutY="-4.0" mnemonicParsing="false" onAction="#apriDashboard" prefHeight="47.0" prefWidth="52.0" style="-fx-background-color: transparent;">
+                                            <graphic>
+                                                <ImageView fx:id="fotoProfilo" fitHeight="25.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/icons8-ospite-24.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </Pane>
+
+                            </children>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+            
+            <AnchorPane layoutX="49.0" layoutY="110.0" prefHeight="74.0" prefWidth="1438.0" style="-fx-background-color: rgba(20, 88, 88, 0.56); -fx-background-radius: 16; -fx-border-color: #225b63; -fx-border-radius: 16;" styleClass="AnchorPaneRicerca" stylesheets="@../../css/style.css">
+               <children>
+                  <Pane layoutX="15.0" layoutY="20.0" prefHeight="49.0" prefWidth="480.0" styleClass="PaneRicerca" stylesheets="@../../css/style.css">
+                     <children>
+                        <HBox layoutX="8.0" layoutY="6.0" prefHeight="37.0" prefWidth="234.0" styleClass="labelRicerca" stylesheets="@../../css/style.css">
+                           <children>
+                              <Label fx:id="comuniLbl" alignment="CENTER" prefHeight="37.0" prefWidth="195.0" textFill="#fafafa">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Button mnemonicParsing="false" onAction="#levaComune" prefHeight="35.0" prefWidth="43.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                                 <graphic>
+                                    <ImageView fx:id="immagineX" fitHeight="20.0" fitWidth="21.0">
+                                       <image>
+                                          <Image url="@../../images/icons8-cross-mark-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="localitàTextField" layoutX="242.0" layoutY="6.0" onKeyTyped="#suggerimento" prefHeight="37.0" prefWidth="234.0" promptText="Cerca un nuovo comune" style="-fx-background-color: transparent; -fx-prompt-text-fill: #fafafa;" styleClass="textField">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </Pane>
+                  <ScrollPane fx:id="filtriScrollPane" hbarPolicy="NEVER" layoutX="556.0" layoutY="7.0" prefHeight="74.0" prefWidth="658.0" style="-fx-background-color: transparent;" stylesheets="@../../css/ScrollPane2.css" vbarPolicy="NEVER">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="34.0" prefWidth="1096.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <HBox layoutX="5.0" layoutY="23.0" prefHeight="74.0" prefWidth="1086.0" style="-fx-background-color: transparent; -fx-spacing: 30;">
+                                 <children>
+                                    <MenuButton fx:id="statoMenu" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-cursor: hand;" text="Qualsiasi" textFill="#fafafa">
+                                    </MenuButton>
+                                    <TextField fx:id="prezzoMinText" alignment="CENTER" prefHeight="26.0" promptText="Inserisci prezzo minimo" style="-fx-prompt-text-fill: #fafafa; -fx-cursor: hand;" styleClass="textField" />
+                                    <TextField fx:id="prezzoMaxText" alignment="CENTER" prefHeight="26.0" promptText="Inserisci prezzo massimo" style="-fx-prompt-text-fill: #fafafa; -fx-cursor: hand;" styleClass="textField" />
+                                    <MenuButton fx:id="classeMenu" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-cursor: hand;" text="Qualsiasi" textFill="#fafafa" />
+                                    <TextField fx:id="textNumeroLocali" alignment="CENTER" prefHeight="26.0" promptText="Inserisci numero stanze" style="-fx-prompt-text-fill: #fafafa;" styleClass="textField" />
+                                 </children>
+                              </HBox>
+                              <Label layoutX="3.0" layoutY="-2.0" prefHeight="26.0" prefWidth="121.0" text="Stato vendita" textFill="#fafafa">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="142.0" layoutY="-2.0" prefHeight="26.0" prefWidth="121.0" text="Prezzo minimo" textFill="#fafafa">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="323.0" layoutY="-2.0" prefHeight="26.0" prefWidth="121.0" text="Prezzo massimo" textFill="#fafafa">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="502.0" layoutY="-2.0" prefHeight="26.0" prefWidth="121.0" text="Classe energetica" textFill="#fafafa">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="671.0" layoutY="1.0" prefHeight="19.0" prefWidth="154.0" text="Numero stanze" textFill="#fafafa">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <Button fx:id="btnAggiornaRicerca" layoutX="1270.0" layoutY="25.0" mnemonicParsing="false" onAction="#gestioneRicercaImmobile" prefHeight="35.0" prefWidth="146.0" styleClass="buttonAggiornaRicerca" text="Aggiorna la ricerca" textFill="#145858">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+            
+            <Line endX="-143.79998779296875" endY="-110.60000610351562" layoutX="707.0" layoutY="293.0" startX="-143.79998779296875" startY="-174.60000610351562" stroke="#2a4e5a" />
+            
+            <Button fx:id="btnIndietro" layoutX="565.0" layoutY="135.0" mnemonicParsing="false" onAction="#handlerTastoIndietro" prefHeight="31.0" prefWidth="40.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icons8-back-button-24.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnAvanti" layoutX="1262.0" layoutY="135.0" mnemonicParsing="false" onAction="#handlerTastoAvanti" prefHeight="31.0" prefWidth="40.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="27.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icons8-forward-button-24.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            
+            <WebView fx:id="webViewMap" layoutX="49.0" layoutY="260.0" prefHeight="505.0" prefWidth="571.0" />
+            
+            <Pane layoutX="435.0" layoutY="628.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="immobileNonTrovatoLbl3" layoutX="-340.0" layoutY="-14.0" prefHeight="44.0" prefWidth="871.0" text=" Ti invitiamo a provare con parametri diversi o a tornare più tardi." textFill="#fafafa" visible="false">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <Pane prefHeight="47.0" prefWidth="15.0" />
+            <Pane layoutX="1384.0" layoutY="642.0" prefHeight="200.0" prefWidth="200.0" />
+            
+            <ScrollPane fx:id="annunciScrollPane" layoutX="617.0" layoutY="260.0" prefHeight="514.0" prefWidth="871.0" stylesheets="@../../css/ScrollPane2.css">
+              <content>
+                <AnchorPane fx:id="anchorPane" minHeight="0.0" minWidth="0.0" prefHeight="586.0" prefWidth="829.0" style="-fx-cursor: hand;">
+                     <children>
+                        <Pane fx:id="PaneAnnunci" layoutX="14.0" layoutY="14.0" prefHeight="466.0" prefWidth="806.0" style="-fx-background-radius: 10;" styleClass="container2">
+                           <children>
+                              <Pane fx:id="paneImageAnnunci" layoutX="14.0" layoutY="14.0" prefHeight="444.0" prefWidth="360.0">
+                                 <children>
+                                    <ImageView fitHeight="413.0" fitWidth="331.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="paneInfoAnnunci" layoutX="393.0" layoutY="6.0" prefHeight="457.0" prefWidth="408.0">
+                                 <children>
+                                    <Pane fx:id="panePrezzoA" layoutX="14.0" layoutY="14.0" prefHeight="73.0" prefWidth="373.0" styleClass="PaneAnnunciInfo">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="6.0" text="Prezzo" textFill="#fafafa">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="14.0" layoutY="37.0" text="€" textFill="#fafafa">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="infoPrezzoLbl" layoutX="33.0" layoutY="37.0" prefHeight="25.0" prefWidth="269.0" textFill="#fafafa">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Label fx:id="tipoImmobileLbl" layoutX="16.0" layoutY="299.0" prefHeight="25.0" prefWidth="90.0" textFill="#fafafa">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="14.0" layoutY="115.0" prefHeight="174.0" prefWidth="373.0" styleClass="PaneAnnunciInfo">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="6.0" text="Forniture ed altro" textFill="#fafafa">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/icons8-bagno-90.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/icons8-superficie-80.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="184.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/icons8-pianta-80.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="184.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/icons8-scale-80.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label fx:id="numeroBagniLbl" layoutX="65.0" layoutY="51.0" prefHeight="35.0" prefWidth="24.0" text="2" textFill="#fafafa" />
+                                          <Label fx:id="numeroSupLbl" layoutX="65.0" layoutY="116.0" prefHeight="35.0" prefWidth="24.0" textFill="#fafafa" />
+                                          <Label fx:id="numeroStanzeLbl" layoutX="235.0" layoutY="50.0" prefHeight="35.0" prefWidth="24.0" textFill="#fafafa" />
+                                          <Label fx:id="numeroPianoLbl" layoutX="235.0" layoutY="116.0" prefHeight="35.0" prefWidth="24.0" textFill="#fafafa" />
+                                          <Label layoutX="96.0" layoutY="50.0" prefHeight="35.0" prefWidth="71.0" text="bagni" textFill="#fafafa" />
+                                          <Label layoutX="95.0" layoutY="116.0" prefHeight="35.0" prefWidth="71.0" text="m²" textFill="#fafafa" />
+                                          <Label layoutX="271.0" layoutY="50.0" prefHeight="35.0" prefWidth="71.0" text="locali" textFill="#fafafa" />
+                                          <Label layoutX="271.0" layoutY="116.0" prefHeight="35.0" prefWidth="71.0" text="piano" textFill="#fafafa" />
+                                       </children>
+                                    </Pane>
+                                    <Label fx:id="indirizzoLbl" layoutX="112.0" layoutY="299.0" prefHeight="44.0" prefWidth="274.0" textFill="#fafafa" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="13.0" layoutY="354.0" prefHeight="97.0" prefWidth="373.0" styleClass="PaneAnnunciInfo">
+                                       <children>
+                                          <Label layoutX="13.0" layoutY="9.0" text="Descrizione" textFill="#fafafa">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="infoDescrizioneLbl" alignment="TOP_LEFT" layoutX="14.0" layoutY="30.0" prefHeight="63.0" prefWidth="350.0" textFill="#fafafa" wrapText="true" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+              </content>
+            </ScrollPane>
+            
+            <Label fx:id="scrittaCaricamento" layoutX="33.0" layoutY="199.0" prefHeight="38.0" prefWidth="758.0" text="Un momento stiamo caricando gli immobili migliori per te..." textFill="#fafafa">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+
+         <VBox fx:id="boxErrore" alignment="CENTER" layoutX="617.0" layoutY="260.0" prefHeight="514.0" prefWidth="871.0" spacing="15.0" visible="false">
+            <children>
+               <ImageView fx:id="immagineNoCar" fitHeight="146.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/nofoundimg.png" />
+               </image>
+               </ImageView>
+               <Label text="Non sono stati trovati immobili" textFill="#fafafa">
+                  <font><Font name="System Bold" size="21.0" /></font>
+               </Label>
+               <Label text="che corrispondono ai tuoi parametri." textFill="#fafafa">
+                  <font><Font name="System Bold" size="21.0" /></font>
+               </Label>
+               <Label text="Prova ad inserirne diversi." textFill="#fafafa">
+                  <font><Font name="System Bold" size="18.0" /></font>
+               </Label>
+            </children>
+         </VBox>
+
+            <ListView fx:id="listMaps" layoutX="307.0" layoutY="160.0" prefHeight="78.0" prefWidth="233.0" style="-fx-background-color: white; -fx-background-radius: 20;" styleClass="container2" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="540.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1">
+    <stylesheets>
+        <URL value="@../../css/style.css"/>
+    </stylesheets>
+    <children>
+
+        <!-- Header -->
+        <HBox spacing="10"
+              AnchorPane.topAnchor="10"
+              AnchorPane.leftAnchor="20"
+              AnchorPane.rightAnchor="20"
+              alignment="CENTER_LEFT">
+
+            <Label text="Chi Siamo – DietiEstates25"
+                   styleClass="title-page"/>
+
+            <HBox alignment="CENTER_RIGHT"
+                  prefWidth="200"
+                  HBox.hgrow="ALWAYS">
+            </HBox>
+        </HBox>
+
+        <!-- Contenuto -->
+        <VBox spacing="15"
+              AnchorPane.topAnchor="80"
+              AnchorPane.leftAnchor="20"
+              AnchorPane.rightAnchor="20"
+              AnchorPane.bottomAnchor="20"
+              styleClass="container">
+
+            <ScrollPane fitToWidth="true"
+                        hbarPolicy="NEVER"
+                        vbarPolicy="AS_NEEDED"
+                        styleClass="custom-scroll">
+
+                <content>
+                    <VBox spacing="14" styleClass="content-box">
+                        <Label text="1. La nostra missione"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               styleClass="section-text"
+                               text="DietiEstates25 ha l’obiettivo di rendere il settore immobiliare semplice e accessibile, offrendo strumenti digitali intuitivi per la gestione e la ricerca degli immobili."/>
+
+                        <Label text="2. Chi siamo?"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               styleClass="section-text"
+                               text="DietiEstates25 è una piattaforma digitale dedicata agli utenti, alle agenzie e ai professionisti del settore immobiliare, progettata per semplificare ogni fase della compravendita e dell’affitto."/>
+
+                        <Label text="3. I nostri valori"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               styleClass="section-text"
+                               text="Trasparenza, affidabilità e innovazione sono i principi guida di DietiEstates25. Ci impegniamo a offrire un servizio chiaro, sicuro e orientato alle esigenze degli utenti."/>
+
+                        <Label text="4. Cosa offriamo?"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               styleClass="section-text"
+                               text="DietiEstates25 mette a disposizione una piattaforma completa con ricerca avanzata, mappe interattive, contatto diretto con le agenzie e strumenti per pubblicare o trovare immobili facilmente."/>
+
+                        <Label text="5. Perché scegliere DietiEstates25?"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               styleClass="section-text"
+                               text="Perché DietiEstates25 pone l’utente al centro, garantendo trasparenza, semplicità e supporto costante in tutte le fasi del processo immobiliare."/>
+
+                        <Label text="6. Come contattarci?"
+                               styleClass="section-title"/>
+
+                        <Label wrapText="true"
+                               styleClass="section-text"
+                               text="Per qualsiasi informazione o supporto, contatta il team di DietiEstates25 attraverso i canali ufficiali della piattaforma. Siamo a disposizione per rispondere a ogni tua domanda in tempi rapidi."/>
+
+
+                    </VBox>
+                </content>
+
+            </ScrollPane>
+
+        </VBox>
+
+    </children>
+</AnchorPane>
+

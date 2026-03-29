@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="1106.0" style="-fx-background-color: linear-gradient(to bottom, #FFF5F5, #3e838c);" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.prenotaVisita.EffettuaPrenotazioneController">
+   <children>
+      
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1106.0" style="-fx-background-color: #145858;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+         <children>
+            <Label fx:id="scrittaNoNotifica" text="Effettua la tua prenotazione!" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <Pane HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/DE25Logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+
+      <VBox alignment="TOP_CENTER" layoutY="100.0" prefHeight="666.0" prefWidth="1106.0" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <padding>
+            <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
+         </padding>
+         <children>
+
+            <StackPane prefHeight="140.0" prefWidth="1000.0">
+               <children>
+                  <Label fx:id="scrittaMeteo" text="Seleziona un giorno per visualizzare le previsioni meteo." textFill="#145858">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  
+                  <Pane fx:id="paneMeteo" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="136.0" prefWidth="850.0" style="-fx-background-color: #98B9F2; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);" visible="false">
+                     <children>
+                        <Label fx:id="labelGradi" layoutX="60.0" layoutY="20.0" text="23°" textFill="WHITE">
+                           <font><Font name="System Bold" size="65.0" /></font>
+                        </Label>
+                        <Label fx:id="scrittaData" layoutX="260.0" layoutY="20.0" text="Sabato, 2 Novembre 2024" textFill="WHITE">
+                           <font><Font name="System Bold" size="24.0" /></font>
+                        </Label>
+                        
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="260.0" layoutY="55.0">
+                           <image><Image url="@../../images/location.png" /></image>
+                        </ImageView>
+                        <Label fx:id="scrittaPosizione" layoutX="300.0" layoutY="60.0" text="Napoli, Campania - Italia" textFill="WHITE">
+                           <font><Font size="16.0" /></font>
+                        </Label>
+                        
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="262.0" layoutY="95.0">
+                           <image><Image url="@../../images/rain.png" /></image>
+                        </ImageView>
+                        <Label fx:id="percentualePioggia" layoutX="300.0" layoutY="98.0" text="Probabilità di pioggia: 75%" textFill="WHITE">
+                           <font><Font size="16.0" /></font>
+                        </Label>
+
+                        <ImageView fx:id="sunImg" fitHeight="140.0" fitWidth="140.0" layoutX="680.0" layoutY="-10.0">
+                           <image><Image url="@../../images/sun.png" /></image>
+                        </ImageView>
+                        <ImageView fx:id="temporaleImg" fitHeight="130.0" fitWidth="130.0" layoutX="680.0" layoutY="5.0" visible="false">
+                           <image><Image url="@../../images/storm.png" /></image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label fx:id="scrittaNoNotifica1" text="Seleziona il giorno in cui vuoi visitare l'immobile" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnIndietroDate" mnemonicParsing="false" onMouseClicked="#tornaAllaDash" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent; -fx-cursor: hand;" visible="false">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@../../images/tornaIndietroBottone.png" /></image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        
+                        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="110.0" prefWidth="850.0" style="-fx-background: transparent; -fx-background-color: transparent;" stylesheets="@../../css/ScrollPaneCss.css" vbarPolicy="NEVER">
+                           <content>
+                              <HBox fx:id="hboxContenitore" alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0" />
+                           </content>
+                        </ScrollPane>
+
+                        <Button fx:id="btnAvantiDate" mnemonicParsing="false" onMouseClicked="#tornaAllaDash" prefHeight="50.0" prefWidth="50.0" rotate="180.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@../../images/tornaIndietroBottone.png" /></image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Label fx:id="scrittaNoNotifica12" text="Seleziona la fascia oraria della visita" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  
+                  <HBox alignment="CENTER" spacing="30.0">
+                     <children>
+                        <Pane fx:id="primaFasciaOrari" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: white; -fx-background-radius: 25; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 3);">
+                           <children>
+                              <Label fx:id="primaFasciaLabel" alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="50.0" prefWidth="160.0" text="09:00 - 12:00" textFill="#145858">
+                                 <font><Font name="System Bold" size="20.0" /></font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        
+                        <Pane fx:id="secondaFasciaOrari" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: white; -fx-background-radius: 25; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 3);">
+                           <children>
+                              <Label fx:id="secondaFasciaLabel" alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="50.0" prefWidth="160.0" text="14:00 - 17:00" textFill="#145858">
+                                 <font><Font name="System Bold" size="20.0" /></font>
+                              </Label>
+                           </children>
+                        </Pane>
+
+                        <Pane fx:id="terzaFasciaOrari" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: white; -fx-background-radius: 25; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 3);">
+                           <children>
+                              <Label fx:id="terzaFasciaLabel" alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="50.0" prefWidth="160.0" text="17:00 - 20:00" textFill="#145858">
+                                 <font><Font name="System Bold" size="20.0" /></font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+
+            <VBox alignment="BOTTOM_CENTER" prefHeight="100.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="bottoneInvia" mnemonicParsing="false" onAction="#inviaRichiesta" prefHeight="55.0" prefWidth="300.0" styleClass="bottoniVerdi" style="-fx-background-radius: 30; -fx-cursor: hand;" text="INVIA RICHIESTA" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0"
+      prefWidth="567.0" styleClass="gradient-backgrounds"
+      fx:controller="com.example.prova2.controller.prenotaVisita.AlertVisitaController" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="24.0" layoutY="65.0" prefHeight="96.0" prefWidth="519.0" style="-fx-background-color: #CFE7D1; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="59.0" layoutY="24.0" text="Richiesta di visita inviata.">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="49.0" fitWidth="47.0" layoutX="7.0" layoutY="19.0">
+               <image>
+                  <Image url="@../../images/icn-done.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="240.0" layoutY="24.0" text="L'inserzionista ti contatterà per">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="48.0" text="confermare giorno e ora della visita">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="richiediVisitaLbl" onMouseClicked="#richiediVisita" layoutX="14.0" layoutY="14.0" text="Richiedi visita" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Pane onMouseClicked="#richiediVisita" layoutX="32.0" layoutY="176.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-cursor: hand;">
+         <children>
+            <Label  layoutX="174.0" layoutY="16.0" text="RICHIEDI UNA NUOVA VISITA">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="132.0" layoutY="11.0">
+               <image>
+                  <Image url="@../../images/icons8-calendario-50 (1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="142.0" layoutY="250.0" prefHeight="84.0" prefWidth="87.0" style="-fx-border-color: white;">
+         <children>
+            <ImageView fitHeight="58.0" fitWidth="60.0" layoutX="13.0" layoutY="13.0">
+               <image>
+                  <Image url="@../../images/icons8-agente-immobiliare-50 (1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label fx:id="nomeAgente" layoutX="245.0" layoutY="278.0" text="Mario Rossi" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

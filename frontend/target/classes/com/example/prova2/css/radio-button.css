@@ -1,0 +1,20 @@
+.radio-button .radio {
+    -fx-background-color: transparent;
+    -fx-border-color: #145858;      /* Bordo verde acqua scuro */
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-padding: 5;
+    -fx-shape: "M 0 0 A 5 5 0 1 1 10 0 A 5 5 0 1 1 0 0";
+}
+
+.radio-button:hover .radio {
+    -fx-border-color: #20B2AA;      /* Accento al passaggio */
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: #145858;  /* Riempimento verde acqua scuro */
+    -fx-border-color: #145858;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 5;
+}

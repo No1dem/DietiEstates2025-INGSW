@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="700.0" prefWidth="1300.0" styleClass="gradient-backgrounds4" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.CreaAgenteImmobiliareController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="30.0" top="15.0" />
+            </padding>
+            <children>
+                <Button fx:id="tornaIndietroBottone" mnemonicParsing="false" onAction="#tornaIndietro" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                    <graphic>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/tornaIndietroBottone.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                
+                <Label text="Crea agente" textFill="#f3f6f4">
+                    <font>
+                        <Font name="System Bold Italic" size="27.0" />
+                    </font>
+                </Label>
+                
+                <Region HBox.hgrow="ALWAYS" />
+                
+                <ImageView fitHeight="55.0" fitWidth="55.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/DE25Logo.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox alignment="TOP_CENTER" spacing="50.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+            </padding>
+
+            <VBox alignment="CENTER_LEFT" prefWidth="450.0" spacing="40.0" style="-fx-background-radius: 20;" styleClass="container">
+                <padding>
+                    <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                </padding>
+                
+                <VBox spacing="10.0">
+                    <Label text="Crea i tuoi agenti su DietiEstates25Pro!" textFill="#f3f6f4" wrapText="true">
+                        <font>
+                            <Font name="System Bold" size="24.0" />
+                        </font>
+                    </Label>
+                    <Label text="Una volta creati i tuoi agenti possono:" textFill="#f3f6f4" wrapText="true">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+                </VBox>
+                
+                <VBox spacing="25.0">
+                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                        <ImageView fitHeight="35.0" fitWidth="35.0">
+                            <image><Image url="@../../images/checked.png" /></image>
+                        </ImageView>
+                        <Label text="Accedere alla loro area riservata" textFill="#f3f6f4" wrapText="true">
+                            <font><Font name="System Bold" size="16.0" /></font>
+                        </Label>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                        <ImageView fitHeight="35.0" fitWidth="35.0">
+                            <image><Image url="@../../images/checked.png" /></image>
+                        </ImageView>
+                        <Label text="Pubblicare annunci" textFill="#f3f6f4" wrapText="true">
+                            <font><Font name="System Bold" size="16.0" /></font>
+                        </Label>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                        <ImageView fitHeight="35.0" fitWidth="35.0">
+                            <image><Image url="@../../images/checked.png" /></image>
+                        </ImageView>
+                        <Label text="Ricevere prenotazioni riguardo gli immobili caricati" textFill="#f3f6f4" wrapText="true">
+                            <font><Font name="System Bold" size="16.0" /></font>
+                        </Label>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <VBox prefWidth="900.0" spacing="30.0" style="-fx-background-radius: 20;" styleClass="container2">
+                <padding>
+                    <Insets bottom="40.0" left="50.0" right="50.0" top="40.0" />
+                </padding>
+
+                <Label text="Crea i tuoi agenti immobiliari!" textFill="#f3f6f4">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+
+                <HBox spacing="40.0">
+                    
+                    <VBox spacing="15.0" HBox.hgrow="ALWAYS">
+                        <Label text="1. Dati anagrafici dell'agente" textFill="#f3f6f4">
+                            <font><Font name="System Bold" size="20.0" /></font>
+                        </Label>
+                        
+                        <VBox spacing="5.0">
+                            <Label text="Nome" textFill="#f3f6f4" />
+                            <TextField fx:id="textFieldNome" onKeyTyped="#eliminaNomeErrorMsg" prefHeight="40.0" promptText="Es. Mario" styleClass="textField" />
+                            <Label fx:id="erroreNome" managed="${erroreNome.visible}" text="Si prega di inserire un nome" textFill="#f7f583" visible="false" />
+                        </VBox>
+
+                        <VBox spacing="5.0">
+                            <Label text="Cognome" textFill="#f3f6f4" />
+                            <TextField fx:id="textFieldCognome" onKeyTyped="#eliminaMsgErroreCognome" prefHeight="40.0" promptText="Es. Rossi" styleClass="textField" />
+                            <Label fx:id="erroreCognome" managed="${erroreCognome.visible}" text="Si prega di inserire un cognome" textFill="#f7f583" visible="false" />
+                        </VBox>
+
+                        <VBox spacing="5.0">
+                            <Label text="Codice Fiscale" textFill="#f3f6f4" />
+                            <TextField fx:id="textFieldCf" onKeyTyped="#eliminaMsgErroreCF" prefHeight="40.0" promptText="Es. SVNGLN03T05H892R" styleClass="textField" />
+                            <Label fx:id="erroreCodiceFiscale" managed="${erroreCodiceFiscale.visible}" text="Si prega di inserire un codice fiscale" textFill="#f7f583" visible="false" />
+                        </VBox>
+
+                        <VBox spacing="5.0">
+                            <Label text="Telefono" textFill="#f3f6f4" />
+                            <HBox spacing="10.0">
+                                <TextField disable="true" prefHeight="40.0" prefWidth="60.0" text="+39" styleClass="textField" />
+                                <TextField fx:id="textFieldNumeroTelefono" onKeyTyped="#eliminaMsgErroreNumeroTelefono" prefHeight="40.0" promptText="Es. 3664398508" styleClass="textField" HBox.hgrow="ALWAYS" />
+                            </HBox>
+                            <Label fx:id="erroreTelefono" managed="${erroreTelefono.visible}" text="Si prega di inserire un telefono" textFill="#f7f583" visible="false" />
+                        </VBox>
+                    </VBox>
+
+                    <VBox spacing="15.0" HBox.hgrow="ALWAYS">
+                        <Label text="2. Dati per il suo account" textFill="#f3f6f4">
+                            <font><Font name="System Bold" size="20.0" /></font>
+                        </Label>
+
+                        <VBox spacing="5.0">
+                            <Label text="Email" textFill="#f3f6f4" />
+                            <TextField fx:id="textFieldEmail" onKeyTyped="#eliminaMsgErroreEmail" prefHeight="40.0" promptText="Es. email@gmail.com" styleClass="textField" />
+                            <Label fx:id="erroreEmail" managed="${erroreEmail.visible}" text="Si prega di inserire un'email" textFill="#f7f583" visible="false" />
+                        </VBox>
+
+                        <VBox spacing="5.0">
+                            <Label text="Password (Almeno 8 caratteri)" textFill="#f3f6f4" />
+                            <StackPane alignment="CENTER_LEFT">
+                                <PasswordField fx:id="textFieldPassword" onKeyTyped="#eliminaMsgErrorePassword" prefHeight="40.0" promptText="Es. La mia password" styleClass="textField" />
+                                <TextField fx:id="mostraPwd" visible="false" prefHeight="40.0" promptText="Es. La mia password" styleClass="textField" />
+                            </StackPane>
+                            <CheckBox fx:id="mostraPasswordCheckBox" onAction="#gestioneMostraPwd" text="Mostra password" textFill="WHITE" style="-fx-cursor: hand;" />
+                            <Label fx:id="errorePassword" managed="${errorePassword.visible}" text="Si prega di inserire una password" textFill="#f7f583" visible="false" />
+                        </VBox>
+                        
+                        <TextField fx:id="textFieldRiPassword" managed="false" visible="false" />
+                    </VBox>
+                </HBox>
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
+                    <Button mnemonicParsing="false" onAction="#svuotaDati" prefHeight="45.0" prefWidth="140.0" styleClass="bottoneTornaIndietro" text="Svuota campi">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Button>
+                    <Button fx:id="buttonCrea" mnemonicParsing="false" onAction="#registraCliente" prefHeight="45.0" prefWidth="140.0" styleClass="crea" text="Crea">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Button>
+                </HBox>
+                
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

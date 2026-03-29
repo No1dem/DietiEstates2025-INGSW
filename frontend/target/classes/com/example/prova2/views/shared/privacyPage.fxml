@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="488.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- Collegamento CSS -->
+    <stylesheets>
+        <URL value="@../../css/style.css" />
+    </stylesheets>
+
+    <children>
+
+        <!-- Titolo -->
+        <Label layoutX="20" layoutY="20" styleClass="title-page" text="Privacy Policy – DietiEstates25" />
+
+        <!-- Contenuto scrollabile -->
+        <ScrollPane fitToWidth="true" layoutX="20" layoutY="60" prefHeight="417" prefWidth="580" styleClass="custom-scroll">
+
+            <content>
+                <VBox spacing="12" styleClass="content-box">
+
+                    <Label text="1. Come proteggiamo i tuoi dati?" styleClass="section-title"/>
+                    <Label wrapText="true" text="Mettiamo in campo misure di sicurezza avanzate per proteggere le tue informazioni da accessi non autorizzati o perdite accidentali." styleClass="section-text"/>
+
+                    <Label text="2. Quali dati raccogliamo?" styleClass="section-title"/>
+                    <Label wrapText="true" text="Raccogliamo informazioni come nome, email, numero di telefono e dati di navigazione per offrirti un’esperienza personalizzata e sicura sulla piattaforma." styleClass="section-text"/>
+
+                    <Label text="3. Quanto tempo conserviamo i dati?" styleClass="section-title"/>
+                    <Label wrapText="true" text="Conserviamo le informazioni solo il tempo necessario per fornire i servizi richiesti, rispettando eventuali obblighi legali." styleClass="section-text"/>
+
+                    <Label text="4. I dati sono condivisi con terzi?" styleClass="section-title"/>
+                    <Label wrapText="true" text="I dati possono essere condivisi con partner affidabili per migliorare il servizio, sempre nel rispetto delle normative vigenti." styleClass="section-text"/>
+
+                    <Label text="5. Come posso modificare i miei dati?" styleClass="section-title"/>
+                    <Label wrapText="true" text="Puoi aggiornare o correggere le tue informazioni direttamente dalla sezione impostazioni del tuo account." styleClass="section-text"/>
+
+                    <Label text="6. Come richiedere la cancellazione dei dati?" styleClass="section-title"/>
+                    <Label wrapText="true" text="Per rimuovere i tuoi dati dalla piattaforma, invia una richiesta a Mario Rossi, tramite Microsoft Teams. Ci occuperemo della cancellazione rapidamente." styleClass="section-text"/>
+
+                    <Label text="7. Cosa fare in caso di violazioni dei dati?" styleClass="section-title"/>
+                    <Label wrapText="true" text="Se dovesse verificarsi una violazione, ti informeremo tempestivamente e prenderemo tutte le misure necessarie per proteggere le tue informazioni." styleClass="section-text"/>
+
+                    <Label text="8. Come utilizziamo le tue informazioni?" styleClass="section-title"/>
+                    <Label wrapText="true" text="Usiamo i dati per migliorare la piattaforma, offrirti servizi più efficienti e garantire la sicurezza di tutti gli utenti." styleClass="section-text"/>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+
+    
+    </children>
+</AnchorPane>

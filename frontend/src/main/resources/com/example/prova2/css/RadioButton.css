@@ -1,0 +1,26 @@
+.radio-button .radio {
+    -fx-background-color: transparent;
+    -fx-border-color: #145858;      /* Verde acqua scuro */
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-padding: 5;
+    -fx-shape: "M 0 0 A 5 5 0 1 1 10 0 A 5 5 0 1 1 0 0";
+}
+
+.radio-button:hover .radio {
+    -fx-border-color: #20B2AA;      /* Accento teal */
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: #E0F2F1;  /* Verde acqua chiaro */
+    -fx-border-color: #20B2AA;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 5;
+}
+
+/* Pallino interno più evidente */
+.radio-button:selected .dot {
+    -fx-background-color: #145858;
+    -fx-background-radius: 5;
+}

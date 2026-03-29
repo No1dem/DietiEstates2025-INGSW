@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: linear-gradient(to bottom, #145858, #3e838c);" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.modificaProfilo.ModificaProfiloGoogleController">
+   <children>
+      
+      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="950.0" style="-fx-background-color: rgba(0,0,0,0.2);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+         <children>
+            <Pane prefWidth="35.0" /> 
+            <Label text="Modifica Profilo (Google)" textFill="#f3f6f4">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Label>
+            <Pane HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/DE25Logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+
+      <StackPane alignment="TOP_CENTER" layoutY="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <Pane fx:id="paneAnnullaCambio" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="550.0" style="-fx-background-color: #224A11; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 3);" visible="false">
+               <children>
+                  <Label layoutX="20.0" layoutY="10.0" text="Password cambiata con successo!" textFill="#f3f6f4">
+                     <font><Font name="System Bold" size="15.0" /></font>
+                  </Label>
+                  <Label layoutX="350.0" layoutY="10.0" onMouseClicked="#tornaIndietroPassword" style="-fx-cursor: hand;" text="Annulla cambiamento" textFill="#f3f6f4" underline="true">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+
+      <HBox alignment="CENTER" layoutY="105.0" spacing="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            
+            <VBox alignment="TOP_CENTER" prefHeight="510.0" prefWidth="300.0" spacing="15.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);">
+               <padding>
+                  <Insets bottom="25.0" left="20.0" right="20.0" top="30.0" />
+               </padding>
+               <children>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="fotoProfilo" fitHeight="130.0" fitWidth="130.0" onMouseClicked="#apriPaginaModificaFoto" style="-fx-cursor: hand;">
+                           <clip><Circle centerX="65" centerY="65" radius="65" /></clip>
+                           <image><Image url="@../../images/user.png" /></image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <Label fx:id="nomeEcognome" text="Nome Cognome" textFill="WHITE">
+                     <font><Font name="System Bold" size="20.0" /></font>
+                  </Label>
+                  
+                  <Pane VBox.vgrow="ALWAYS" /> 
+                  
+                  <Label fx:id="erroreBio" text="Biografia non valida! (Max 3000 car.)" textFill="#f7f583" visible="false" wrapText="true">
+                     <font><Font size="13.0" /></font>
+                  </Label>
+                  
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnCancellaBio" mnemonicParsing="false" onMouseClicked="#resetBio" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 20; -fx-cursor: hand;" text="Cancella" textFill="WHITE" visible="false">
+                           <font><Font name="System Bold" size="13.0" /></font>
+                        </Button>
+                        <Button fx:id="aggiornaBio" mnemonicParsing="false" onAction="#aggiornaBiografia" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #34D058; -fx-background-radius: 20; -fx-cursor: hand;" text="Aggiorna" textFill="WHITE" visible="false">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+
+            <VBox prefHeight="510.0" prefWidth="550.0" spacing="20.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);">
+               <padding>
+                  <Insets bottom="25.0" left="35.0" right="35.0" top="25.0" />
+               </padding>
+               <children>
+                  
+                  <Label text="Modifica i tuoi dati!" textFill="WHITE">
+                     <font><Font name="System Bold" size="24.0" /></font>
+                  </Label>
+
+                  <VBox spacing="10.0">
+                     <children>
+                        <Label text="1. I tuoi dati anagrafici" textFill="#b2d8d8">
+                           <font><Font name="System Bold" size="16.0" /></font>
+                        </Label>
+                        <HBox spacing="15.0">
+                           <children>
+                              <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Nome" textFill="WHITE"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                    <TextField fx:id="textFieldNome" onKeyTyped="#eliminaNomeErrorMsg" prefHeight="35.0" styleClass="textField" />
+                                    <Label fx:id="erroreNome" text="Inserisci un nome valido!" textFill="#F7F583" visible="false"><font><Font size="11.0" /></font></Label>
+                                 </children>
+                              </VBox>
+                              <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Cognome" textFill="WHITE"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                    <TextField fx:id="textFieldCognome" onKeyTyped="#eliminaMsgErroreCognome" prefHeight="35.0" styleClass="textField" />
+                                    <Label fx:id="erroreCognome" text="Inserisci un cognome valido!" textFill="#F7F583" visible="false"><font><Font size="11.0" /></font></Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        
+                        <HBox spacing="15.0">
+                           <children>
+                              <VBox spacing="3.0">
+                                 <children>
+                                    <Label text="Prefisso" textFill="WHITE"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                    <TextField disable="true" prefHeight="35.0" prefWidth="68.0" styleClass="textField" text="+39" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Telefono" textFill="WHITE"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                    <TextField fx:id="textFieldNumeroTelefono" onKeyTyped="#eliminaMsgErroreNumeroTelefono" prefHeight="35.0" styleClass="textField" />
+                                    <Label fx:id="erroreTelefono" text="Inserisci un telefono valido!" textFill="#F7F583" visible="false"><font><Font size="11.0" /></font></Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <VBox spacing="10.0">
+                     <children>
+                        <Label text="2. Dati Account DietiEstates25" textFill="#b2d8d8">
+                           <font><Font name="System Bold" size="16.0" /></font>
+                        </Label>
+                        <VBox spacing="3.0">
+                           <children>
+                              <Label text="Email" textFill="WHITE"><font><Font name="System Bold" size="13.0" /></font></Label>
+                              <TextField fx:id="textFieldEmail" onKeyTyped="#eliminaMsgErroreEmail" prefHeight="35.0" styleClass="textField" />
+                              <Label fx:id="erroreEmail" text="Inserisci un'email valida!" textFill="#F7F583" visible="false"><font><Font size="11.0" /></font></Label>
+                           </children>
+                        </VBox>
+                        <VBox spacing="3.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Label text="Password" textFill="WHITE"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <Label onMouseClicked="#apriPaginaModificaPassword" style="-fx-cursor: hand;" text="Cambia password" textFill="WHITE" underline="true">
+                                       <font><Font name="System Bold" size="13.0" /></font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <PasswordField fx:id="textFieldPassword" disable="true" prefHeight="35.0" styleClass="textField" text="La tua password" />
+                              <Label fx:id="errorePassword" text="Errore password" textFill="#F7F583" visible="false"><font><Font size="11.0" /></font></Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+
+                  <Pane VBox.vgrow="ALWAYS" /> 
+                  
+                  <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                     <children>
+                        <Button fx:id="btnCancella" mnemonicParsing="false" onAction="#annullaModificheDati" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 20; -fx-cursor: hand;" text="Annulla" textFill="WHITE" visible="false">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Button>
+                        <Button fx:id="aggiornaDati" mnemonicParsing="false" onAction="#salvaDatiGoogle" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #34D058; -fx-background-radius: 20; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="Salva Modifiche" textFill="WHITE" visible="false">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Button>
+                     </children>
+                  </HBox>
+
+                  <VBox prefHeight="0.0" visible="false">
+                     <children>
+                        <TextField fx:id="textFieldRiPassword" />
+                        <PasswordField fx:id="textFieldPassword1" />
+                        <Label fx:id="erroreCodiceFiscale" />
+                     </children>
+                  </VBox>
+
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+
+   </children>
+</AnchorPane>

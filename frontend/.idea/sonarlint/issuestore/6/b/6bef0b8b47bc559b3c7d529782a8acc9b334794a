@@ -1,0 +1,29 @@
+
+Š
+java:S1319¦"gThe type of "options" should be an interface such as "List" rather than the implementation "ArrayList".(îæàøúÿÿÿÿ8éÙ±£Û2
+Š
+java:S1319Å"gThe type of "options" should be an interface such as "List" rather than the implementation "ArrayList".(ÏğŸ»üÿÿÿÿ8êÙ±£Û2
+Š
+java:S1319É"gThe type of "options" should be an interface such as "List" rather than the implementation "ArrayList".(ûÈ¼úÿÿÿÿ8ëÙ±£Û2
+Š
+java:S1319Í"gThe type of "options" should be an interface such as "List" rather than the implementation "ArrayList".(¸Á¿øÿÿÿÿ8ëÙ±£Û2
+~
+java:S1104Ô"[Make stagePrecedente a static final constant or non-public and provide accessors if needed.(À”´Öúÿÿÿÿ8óÙ±£Û2
+w
+java:S1104Ö"TMake stageOra a static final constant or non-public and provide accessors if needed.(¤ÃØÔûÿÿÿÿ8ôÙ±£Û2
+Y	java:S125Ÿ"<This block of commented-out lines of code should be removed.(Ó€ˆ¸8õİ±£Û2
+J
+java:S1602Å",Remove useless curly braces around statement(‡ªé¤8úİ±£Û2
+H	java:S106Œ
+"+Replace this use of System.out by a logger.(”äì8ıß±£Û2
+H	java:S106á
+"+Replace this use of System.out by a logger.(”äì8šà±£Û2
+V
+java:S1854’"9Remove this useless assignment to local variable "input".(é¸Ò38§à±£Û2
+P
+java:S1068Ş"2Remove this unused "ERROR_MESSAGE3" private field.(ùµÃÿ8¯à±£Û2
+Q
+java:S1068™".Remove this unused "delayTimer" private field.(è·éæûÿÿÿÿ8¯à±£Û2
+[
+java:S1144Ï
+"8Remove this unused private "navigaAllaDashboard" method.(®‹ëÃûÿÿÿÿ8°à±£Û2

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.CreaAnnuncioController">
+   <content>
+      <VBox alignment="TOP_CENTER" style="-fx-background-color: linear-gradient(to bottom, #145858, #3e838c);">
+         <children>
+            
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" style="-fx-background-color: rgba(0,0,0,0.2);">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnIndietro" mnemonicParsing="false" onAction="#tornaIndietro" style="-fx-cursor: hand; -fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/tornaIndietroBottone.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label text="Crea il tuo nuovo annuncio" textFill="#f3f6f4">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/DE25Logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: rgba(255,255,255,0.05);">
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#attivaCategoria" prefHeight="45.0" style="-fx-background-color: rgba(255,255,255,0.15); -fx-background-radius: 10; -fx-cursor: hand;" text="Categoria" textFill="WHITE" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                     <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="@../../images/icons8-sorting-48.png" /></image></ImageView></graphic>
+                  </Button>
+                  <Button fx:id="btnLocalita" mnemonicParsing="false" onAction="#attivaLocalita" prefHeight="45.0" style="-fx-background-color: rgba(255,255,255,0.15); -fx-background-radius: 10; -fx-cursor: hand;" text="Località" textFill="WHITE" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                     <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="@../../images/icons8-codice-regione-48.png" /></image></ImageView></graphic>
+                  </Button>
+                  <Button fx:id="btnCaratteristiche" mnemonicParsing="false" onAction="#attivaCaratteristiche" prefHeight="45.0" style="-fx-background-color: rgba(255,255,255,0.15); -fx-background-radius: 10; -fx-cursor: hand;" text="Caratteristiche" textFill="WHITE" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                     <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="@../../images/icons8-domotica-50.png" /></image></ImageView></graphic>
+                  </Button>
+                  <Button fx:id="btnPrezzi" mnemonicParsing="false" onAction="#attivaPrezzi" prefHeight="45.0" style="-fx-background-color: rgba(255,255,255,0.15); -fx-background-radius: 10; -fx-cursor: hand;" text="Prezzi" textFill="WHITE" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                     <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="@../../images/icons8-cartellino-prezzo-50.png" /></image></ImageView></graphic>
+                  </Button>
+                  <Button fx:id="btnDocumenti" mnemonicParsing="false" onAction="#attivaDocumenti" prefHeight="45.0" style="-fx-background-color: rgba(255,255,255,0.15); -fx-background-radius: 10; -fx-cursor: hand;" text="Foto" textFill="WHITE" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                     <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="@../../images/icons8-documenti-50.png" /></image></ImageView></graphic>
+                  </Button>
+                  <Button fx:id="btnDescrizione" mnemonicParsing="false" onAction="#attivaDescrizione" prefHeight="45.0" style="-fx-background-color: rgba(255,255,255,0.15); -fx-background-radius: 10; -fx-cursor: hand;" text="Descrizione" textFill="WHITE" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                     <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="@../../images/icons8-descrizione-68.png" /></image></ImageView></graphic>
+                  </Button>
+               </children>
+            </HBox>
+
+            <StackPane VBox.vgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="40.0" left="40.0" right="40.0" top="20.0" />
+               </padding>
+               <children>
+
+                  <VBox fx:id="paneCategoria" spacing="30.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);" visible="false">
+                     <padding><Insets bottom="30.0" left="40.0" right="40.0" top="30.0" /></padding>
+                     <children>
+                        <Label text="Seleziona la Categoria e la Tipologia" textFill="WHITE">
+                           <font><Font name="System Bold" size="26.0" /></font>
+                        </Label>
+
+                        <HBox spacing="40.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox spacing="10.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 15; -fx-padding: 20;" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Categoria dell'immobile" textFill="#b2d8d8"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <VBox fx:id="vboxCat" spacing="15.0">
+                                       <children>
+                                          <RadioButton fx:id="rbRes" text="Residenziale" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                          <RadioButton fx:id="rbApp" text="Appartamento" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                          <RadioButton fx:id="rbAtt" text="Attico" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                          <RadioButton fx:id="rbOpn" text="Open space" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                          <RadioButton fx:id="rbLoft" text="Loft" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                          <RadioButton fx:id="rbMans" text="Mansarda" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                          <RadioButton fx:id="rbVilla" text="Villa a più piani" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                          <RadioButton fx:id="rbBaita" text="Baita" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                       </children>
+                                    </VBox>
+                                    <Label fx:id="errorTipologia" managed="${errorTipologia.visible}" text="Si prega di inserire una tipologia di immobile!" textFill="#F7F583" visible="false" />
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="10.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 15; -fx-padding: 20;" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Tipologia di offerta" textFill="#b2d8d8"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <VBox spacing="15.0">
+                                       <children>
+                                          <RadioButton fx:id="rbVendi" onAction="#rimuoviMessaggioVendita" text="Vendita" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                          <RadioButton fx:id="rbAffitti" onAction="#rimuoviMessaggioVendita" text="Affitto" textFill="WHITE"><font><Font size="15.0" /></font></RadioButton>
+                                       </children>
+                                    </VBox>
+                                    <Label fx:id="venditaErrore" managed="${venditaErrore.visible}" text="Si prega di inserire una tipologia di vendita!" textFill="#F7F583" visible="false" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+
+                        <HBox alignment="BOTTOM_RIGHT">
+                           <Button fx:id="btnAvantiCategoria" mnemonicParsing="false" onAction="#attivaLocalita" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #34D058; -fx-background-radius: 20; -fx-cursor: hand;" text="Avanti" textFill="WHITE">
+                              <font><Font name="System Bold" size="16.0" /></font>
+                           </Button>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+
+                  <VBox fx:id="paneLocalita" spacing="20.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);">
+                     <padding><Insets bottom="30.0" left="40.0" right="40.0" top="30.0" /></padding>
+                     <children>
+                        <Label text="Località del tuo immobile" textFill="WHITE">
+                           <font><Font name="System Bold" size="26.0" /></font>
+                        </Label>
+                        <Label text="Inserisci i dati manualmente oppure clicca sulla mappa." textFill="#b2d8d8">
+                           <font><Font size="16.0" /></font>
+                        </Label>
+
+                        <HBox alignment="BOTTOM_LEFT" spacing="15.0">
+                           <children>
+                              <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <Label text="Comune" textFill="WHITE"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <TextField fx:id="comuneTextField" onKeyTyped="#rimuoviMessaggioComune" promptText="Es. Napoli" styleClass="textField" />
+                                 <Label fx:id="erroreComune" managed="${erroreComune.visible}" text="Inserire un comune valido!" textFill="#F7F583" visible="false" />
+                              </VBox>
+                              <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <Label text="Indirizzo" textFill="WHITE"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <TextField fx:id="indirizzoTextField" onKeyTyped="#rimuoviMessaggioIndirizzo" promptText="Es. Corso Garibaldi" styleClass="textField" />
+                                 <Label fx:id="erroreIndirizzo" managed="${erroreIndirizzo.visible}" text="Inserire un indirizzo valido!" textFill="#F7F583" visible="false" />
+                              </VBox>
+                              <VBox spacing="5.0" prefWidth="100.0">
+                                 <Label text="N° civico" textFill="WHITE"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <TextField fx:id="numeroCivicoTextField" onKeyTyped="#rimuoviMessaggioCivico" promptText="Es. 15" styleClass="textField" />
+                                 <Label fx:id="erroreCivico" managed="${erroreCivico.visible}" text="Non valido!" textFill="#F7F583" visible="false" />
+                              </VBox>
+                              <Button fx:id="btnCercaMappa" mnemonicParsing="false" onAction="#onSearchAddress" prefHeight="40.0" style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 5; -fx-cursor: hand;" text="Visualizza su Mappa" />
+                           </children>
+                        </HBox>
+
+                       
+
+                        <VBox style="-fx-background-color: white; -fx-padding: 3; -fx-background-radius: 5;" VBox.vgrow="ALWAYS">
+                           <WebView fx:id="webViewMap" minHeight="300.0" prefHeight="-1.0" prefWidth="-1.0" />
+                        </VBox>
+
+                        <HBox alignment="BOTTOM_RIGHT">
+                           <Button fx:id="btnAvantiLocalita" mnemonicParsing="false" onAction="#attivaCaratteristiche" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #34D058; -fx-background-radius: 20; -fx-cursor: hand;" text="Avanti" textFill="WHITE">
+                              <font><Font name="System Bold" size="16.0" /></font>
+                           </Button>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+
+                  <VBox fx:id="paneCaratteristiche" spacing="25.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);" visible="false">
+                     <padding><Insets bottom="30.0" left="40.0" right="40.0" top="30.0" /></padding>
+                     <children>
+                        <Label text="Caratteristiche Tecniche" textFill="WHITE">
+                           <font><Font name="System Bold" size="26.0" /></font>
+                        </Label>
+
+                        <GridPane hgap="30.0" vgap="20.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                           </columnConstraints>
+                           
+                           <children>
+                              <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                 <Label text="Superficie commerciale (m²)" textFill="WHITE"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <TextField fx:id="superficieTextField" onKeyTyped="#rimuoviMessaggioSuperficie" promptText="Es. 120" styleClass="textField" />
+                                 <Label fx:id="errorSuperficie" managed="${errorSuperficie.visible}" text="Superficie non valida!" textFill="#F7F583" visible="false" />
+                              </VBox>
+                              
+                              <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                 <Label text="Piano/i" textFill="WHITE"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <TextField fx:id="pianiTextField" onKeyTyped="#rimuoviMessaggioPiano" promptText="Es. 1" styleClass="textField" />
+                                 <Label fx:id="errorPiano" managed="${errorPiano.visible}" text="Piano non valido!" textFill="#F7F583" visible="false" />
+                              </VBox>
+
+                              <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                 <Label text="Numero Stanze (totali)" textFill="WHITE"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <TextField fx:id="numeroStanzeTextField" onKeyTyped="#rimuoviMessaggioStanze" promptText="Es. 3" styleClass="textField" />
+                                 <Label fx:id="errorStanze" managed="${errorStanze.visible}" text="Numero non valido!" textFill="#F7F583" visible="false" />
+                              </VBox>
+
+                              <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <Label text="Presenza Ascensore" textFill="WHITE"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <MenuButton fx:id="menuAscensore" onContextMenuRequested="#rimuoviMessaggioClasseEnergetica" prefHeight="40.0" prefWidth="500.0" style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white;" text="Seleziona..." textFill="WHITE" />
+                                 <Label fx:id="errorAscensore" managed="${errorAscensore.visible}" text="Scelta non valida!" textFill="#F7F583" visible="false" />
+                              </VBox>
+
+                              <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                 <Label text="Classe Energetica" textFill="WHITE"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <MenuButton fx:id="menuClasseEnergetica" onContextMenuRequested="#rimuoviMessaggioClasseEnergetica" prefHeight="40.0" prefWidth="500.0" style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white;" text="Seleziona classe..." textFill="WHITE" />
+                                 <Label fx:id="errorClasse" managed="${errorClasse.visible}" text="Classe non valida!" textFill="#F7F583" visible="false" />
+                              </VBox>
+
+                              <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <Label text="Arredamento" textFill="WHITE"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <HBox spacing="15.0">
+                                    <RadioButton fx:id="rbArr" onAction="#rimuoviMessaggioArredamenti" text="Sì" textFill="WHITE" />
+                                    <RadioButton fx:id="rbParzArr" onAction="#rimuoviMessaggioArredamenti" text="Parziale" textFill="WHITE" />
+                                    <RadioButton fx:id="rbNonArr" onAction="#rimuoviMessaggioArredamenti" text="No" textFill="WHITE" />
+                                 </HBox>
+                                 <Label fx:id="errorArredamento" managed="${errorArredamento.visible}" text="Seleziona un'opzione!" textFill="#F7F583" visible="false" />
+                              </VBox>
+                           </children>
+                        </GridPane>
+
+                        <VBox spacing="10.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 15; -fx-padding: 20;">
+                           <Label text="Dettaglio Locali" textFill="#b2d8d8"><font><Font name="System Bold" size="16.0" /></font></Label>
+                           <HBox spacing="20.0" alignment="CENTER">
+                              <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-padding: 5;">
+                                 <Button fx:id="btnMenoBagni" style="-fx-cursor: hand;" text="-" />
+                                 <Label text="Bagni:" textFill="#333333"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <Label fx:id="bagniLbl" text="0" textFill="#333333"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <Button fx:id="btnPiuBagni" style="-fx-cursor: hand;" text="+" />
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-padding: 5;">
+                                 <Button fx:id="btnMenoSoggiorno" style="-fx-cursor: hand;" text="-" />
+                                 <Label text="Soggiorni:" textFill="#333333"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <Label fx:id="soggiornoLbl" text="0" textFill="#333333"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <Button fx:id="btnPiuSoggiorno" style="-fx-cursor: hand;" text="+" />
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-padding: 5;">
+                                 <Button fx:id="btnMenoCucine" style="-fx-cursor: hand;" text="-" />
+                                 <Label text="Cucine:" textFill="#333333"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <Label fx:id="cucineLbl" text="0" textFill="#333333"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                 <Button fx:id="btnPiuCucine" style="-fx-cursor: hand;" text="+" />
+                              </HBox>
+                           </HBox>
+                        </VBox>
+
+                        <HBox alignment="BOTTOM_RIGHT">
+                           <Button fx:id="btnAvantiCarat" mnemonicParsing="false" onAction="#attivaPrezzi" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #34D058; -fx-background-radius: 20; -fx-cursor: hand;" text="Avanti" textFill="WHITE">
+                              <font><Font name="System Bold" size="16.0" /></font>
+                           </Button>
+                        </HBox>
+                        
+                        <VBox managed="false" visible="false">
+                            <ImageView fx:id="imgStanze" />
+                            <ImageView fx:id="imgPiano" />
+                            <ImageView fx:id="imgSuperficie" />
+                        </VBox>
+                     </children>
+                  </VBox>
+
+                  <VBox fx:id="panePrezzi" spacing="30.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);" visible="false">
+                     <padding><Insets bottom="30.0" left="40.0" right="40.0" top="30.0" /></padding>
+                     <children>
+                        <Label text="Dati Finanziari" textFill="WHITE">
+                           <font><Font name="System Bold" size="26.0" /></font>
+                        </Label>
+
+                        <VBox spacing="20.0" maxWidth="500.0">
+                           <children>
+                              <VBox spacing="5.0">
+                                 <Label text="Prezzo ( € )" textFill="WHITE"><font><Font name="System Bold" size="16.0" /></font></Label>
+                                 <TextField fx:id="prezziTextField" onKeyTyped="#rimuoviMessaggioPrezzo" prefHeight="45.0" promptText="Es. 200.000" styleClass="textField" />
+                                 <Label fx:id="prezzoErrore" managed="${prezzoErrore.visible}" text="Si prega di inserire un prezzo valido!" textFill="#F7F583" visible="false" />
+                              </VBox>
+                              <VBox spacing="5.0">
+                                 <Label text="Spese Condominiali ( €/mese )" textFill="WHITE"><font><Font name="System Bold" size="16.0" /></font></Label>
+                                 <TextField fx:id="speseCondominioTextField" onKeyTyped="#rimuoviMessaggioSpesa" prefHeight="45.0" promptText="Es. 50" styleClass="textField" />
+                                 <Label fx:id="speseErrore" managed="${speseErrore.visible}" text="Si prega di inserire una spesa valida!" textFill="#F7F583" visible="false" />
+                              </VBox>
+                           </children>
+                        </VBox>
+
+                        <Pane VBox.vgrow="ALWAYS" />
+
+                        <HBox alignment="BOTTOM_RIGHT">
+                           <Button fx:id="btnAvantiPrezzi" mnemonicParsing="false" onAction="#attivaDocumenti" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #34D058; -fx-background-radius: 20; -fx-cursor: hand;" text="Avanti" textFill="WHITE">
+                              <font><Font name="System Bold" size="16.0" /></font>
+                           </Button>
+                        </HBox>
+                        
+                        <VBox managed="false" visible="false">
+                           <ImageView fx:id="imgPrezzo" />
+                           <ImageView fx:id="imgSpese" />
+                        </VBox>
+                     </children>
+                  </VBox>
+
+                  <VBox fx:id="paneFoto" spacing="20.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);" visible="false">
+                     <padding><Insets bottom="30.0" left="40.0" right="40.0" top="30.0" /></padding>
+                     <children>
+                        <Label text="Galleria Fotografica" textFill="WHITE">
+                           <font><Font name="System Bold" size="26.0" /></font>
+                        </Label>
+                        <Label text="Carica le foto dell'immobile (almeno una obbligatoria)." textFill="#b2d8d8">
+                           <font><Font size="16.0" /></font>
+                        </Label>
+
+                        <Button fx:id="btnFoto" mnemonicParsing="false" onAction="#caricaImmagine" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 10; -fx-cursor: hand;" text="Inserisci Foto" textFill="WHITE">
+                           <font><Font name="System Bold" size="16.0" /></font>
+                           <graphic><ImageView fitHeight="30.0" fitWidth="30.0"><image><Image url="@../../images/icons8-casa-giardino-50.png" /></image></ImageView></graphic>
+                        </Button>
+
+                        <Label fx:id="errorFoto" managed="${errorFoto.visible}" text="Si prega di inserire almeno una foto!" textFill="#F7F583" visible="false" />
+
+                        <ScrollPane fx:id="scrollImage" style="-fx-background: transparent; -fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 10;" VBox.vgrow="ALWAYS" />
+
+                        <HBox alignment="BOTTOM_RIGHT">
+                           <Button fx:id="btnAvantiFoto" mnemonicParsing="false" onAction="#attivaDescrizione" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #34D058; -fx-background-radius: 20; -fx-cursor: hand;" text="Avanti" textFill="WHITE">
+                              <font><Font name="System Bold" size="16.0" /></font>
+                           </Button>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <VBox fx:id="paneDescrizione" spacing="20.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);" visible="false">
+                     <padding><Insets bottom="30.0" left="40.0" right="40.0" top="30.0" /></padding>
+                     <children>
+                        <Label text="Descrizione dell'Annuncio" textFill="WHITE">
+                           <font><Font name="System Bold" size="26.0" /></font>
+                        </Label>
+
+                        <VBox spacing="5.0">
+                           <Label text="Titolo dell'annuncio" textFill="WHITE"><font><Font name="System Bold" size="16.0" /></font></Label>
+                           <TextField fx:id="titoloTextField" onKeyTyped="#rimuoviMessaggioTitolo" prefHeight="45.0" promptText="Es. Baita sul mare a pochi metri dal centro" styleClass="textField" />
+                           <Label fx:id="errorTitolo" managed="${errorTitolo.visible}" text="Si prega di inserire un titolo valido!" textFill="#F7F583" visible="false" />
+                        </VBox>
+
+                        <VBox spacing="5.0" VBox.vgrow="ALWAYS">
+                           <Label text="Descrizione" textFill="WHITE"><font><Font name="System Bold" size="16.0" /></font></Label>
+                           <TextField fx:id="descrizioneTextField" alignment="TOP_LEFT" onKeyTyped="#rimuoviMessaggioDescrizione" promptText="Max 3000 caratteri..." styleClass="textField" VBox.vgrow="ALWAYS" />
+                           <Label fx:id="errorDes" managed="${errorDes.visible}" text="Si prega di inserire una descrizione valida!" textFill="#F7F583" visible="false" />
+                        </VBox>
+
+                        <HBox alignment="BOTTOM_RIGHT">
+                           <Button fx:id="btnCarica" mnemonicParsing="false" onAction="#generaAnnuncio" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #34D058; -fx-background-radius: 25; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="Pubblica Annuncio!" textFill="WHITE">
+                              <font><Font name="System Bold" size="18.0" /></font>
+                           </Button>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

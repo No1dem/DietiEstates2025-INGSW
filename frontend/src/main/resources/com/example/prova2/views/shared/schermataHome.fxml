@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane fx:id="principalScrollPane" hbarPolicy="NEVER" pannable="true" prefHeight="1499.0" prefWidth="1535.0" stylesheets="@../../css/style.css" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.HomePageController">
+    <content>
+        <Pane fx:id="principalPane" prefHeight="1250.0" prefWidth="1520.0" style="-fx-background-color: linear-gradient(to bottom, #FFF5F5, #3e838c);">
+            <children>
+
+                <!-- background -->
+                <Pane layoutX="-11.0" layoutY="-8.0" opacity="0.50" prefHeight="115.0" prefWidth="1543.0" />
+
+                <!-- Top bar -->
+                <AnchorPane layoutX="20.0" layoutY="18.0" prefHeight="82.0" prefWidth="1491.0" style="-fx-border-width: 5px;  -fx-border-color: #65898f; -fx-background-color: #426570;">
+                    <children>
+                        <Pane layoutX="-8.0" layoutY="-8.0" prefHeight="80.0" prefWidth="1496.0" style="-fx-background-color: #145858; -fx-border-width: 0;">
+                            <children>
+                                <Pane layoutX="1420.0" layoutY="20.0" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: #FFF5F5; -fx-border-color: #284650; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 1; -fx-cursor: hand;">
+                                    <children>
+                                        <Button fx:id="dashboardUtenteBtn" layoutX="-5.0" layoutY="-4.0" mnemonicParsing="false" onMouseClicked="#apriDashboard" prefHeight="47.0" prefWidth="52.0" style="-fx-background-color: transparent;">
+                                            <graphic>
+                                                <ImageView fx:id="fotoProfilo" fitHeight="25.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/icons8-ospite-24.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </Pane>
+
+                                <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/DE25Logo.png" />
+                                    </image>
+                                </ImageView>
+
+                                <Text fill="#fafafa" layoutX="70.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DietiEstates25">
+                                    <font>
+                                        <Font name="System Bold" size="22.0" />
+                                    </font>
+                                </Text>
+
+                                <Hyperlink fx:id="ultimeRicercheLnk" layoutX="1252.0" layoutY="23.0" onAction="#scrollToRicercheRecenti" style="-fx-underline: false;" text="Ricerche recenti" textFill="#fafafa">
+                                    <font>
+                                        <Font name="System Bold" size="17.0" />
+                                    </font>
+                                </Hyperlink>
+                            </children>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+
+                <Button fx:id="btnAvanti" layoutX="1385" layoutY="290" mnemonicParsing="false" onAction="#handlerTastoAvanti" prefHeight="89.0" prefWidth="125.0" style="-fx-background-color: transparent; -fx-cursor: hand;" visible="false">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/avantiFreccia.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="btnIndietro" layoutX="10" layoutY="290" mnemonicParsing="false" onAction="#handlerTastoIndietro" prefHeight="89.0" prefWidth="125.0" style="-fx-background-color: transparent; -fx-cursor: hand;" visible="false">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/indietroFreccia.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Pane fx:id="ricerchePane" layoutX="51.0" layoutY="366.0" prefHeight="595.0" prefWidth="1412.0" style="-fx-background-color: transparent;">
+                    <children>
+
+                        <ScrollPane fx:id="scrollPaneHome" focusTraversable="false" hbarPolicy="NEVER" layoutX="-1.0" layoutY="33.0" prefHeight="557.0" prefWidth="1485.0" style="-fx-border-color: transparent;" stylesheets="@../../css/ScrollPaneCss.css" vbarPolicy="NEVER">
+                            <content>
+                                <HBox fx:id="hBoxPerPane" fillHeight="false" prefHeight="448.0" prefWidth="3174.0" style="-fx-spacing: 150; -fx-border-color: transparent;" />
+                            </content>
+                        </ScrollPane>
+
+                        <ImageView fx:id="imgNoRicercheEffettuate" fitHeight="200.0" fitWidth="200.0" layoutX="650.0" layoutY="70.0">
+                            <image>
+                                <Image url="@../../images/noresult.png" />
+                            </image>
+                        </ImageView>
+
+                        <Text fx:id="txtNoRicercheEffettuate" fill="#297171" layoutX="380.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Non sono state effettuate ricerche!" wrappingWidth="834.6825">
+                            <font>
+                                <Font name="System Bold" size="45.0" />
+                            </font>
+                        </Text>
+
+                    </children>
+                </Pane>
+
+
+                <!-- Thin divider -->
+                <Line endX="457.0" endY="0" layoutX="763.0" layoutY="1012.0" startX="-501.8" startY="0" stroke="#145858" />
+
+                <!-- Footer -->
+                <Pane layoutX="2.0" layoutY="1032.0" prefHeight="220.0" prefWidth="1517.0" styleClass="footer">
+                    <children>
+                        <Label layoutX="623.0" layoutY="188.0" styleClass="footer-label" text="© 2025 DietiEstates25. All rights reserved." />
+
+                        <Hyperlink fx:id="chiSiamoPage" layoutX="164.0" layoutY="76.0" onAction="#openChiSiamoPage" styleClass="footer-link" text="Chi siamo" />
+
+                        <Hyperlink fx:id="FAQLink" layoutX="759.0" layoutY="73.0" onAction="#openFAQ" styleClass="footer-link" text="FAQ" />
+
+                        <Hyperlink fx:id="privacyPageLink" layoutX="1312.0" layoutY="73.0" onAction="#openPrivacyPage" styleClass="footer-link" text="Privacy" />
+                    </children>
+                </Pane>
+
+                <!-- Hidden lists (left as-is) -->
+                <ListView fx:id="listMaps" layoutX="30.0" layoutY="230.0" prefHeight="200.0" prefWidth="184.0" style="-fx-background-color: #2a5f56e5;" visible="false" />
+
+             <!-- Search card -->
+             <Pane layoutX="19.0" layoutY="115.0" prefHeight="116.0" prefWidth="1500.0" style="-fx-background-color: rgba(20, 88, 88, 0.56); -fx-background-radius: 16; -fx-border-color: #225b63; -fx-border-radius: 16;">
+
+                 <children>
+
+                     <!-- COMUNE -->
+                     <Text fill="#ffffff" layoutX="16.0" layoutY="35.0" text="Cerca comune della proprietà">
+                         <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     </Text>
+                     <TextField fx:id="comuneTextField" layoutX="13.0" layoutY="43.0" onKeyTyped="#suggerimento" prefHeight="36.0" prefWidth="184.0" promptText="Es.: Milano, Napoli..." style="-fx-background-color: #ffffff; -fx-border-color: #2a5a52; -fx-border-radius: 8; -fx-background-radius: 8;                           -fx-focus-color: #294c71; -fx-faint-focus-color: #d6e6f2;" />
+
+                     <Line endX="0" endY="38.6" layoutX="225.0" layoutY="40.0" startX="0" startY="-13.6" stroke="#2a4e5a" />
+
+                     <!-- PREZZO -->
+                     <Text fill="#ffffff" layoutX="245.0" layoutY="25.0" text="Prezzo">
+                         <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     </Text>
+                     <Text fill="#ffffff" layoutX="245.0" layoutY="40.0" text="da" />
+                     <ComboBox fx:id="prezzoMinText" layoutX="245.0" layoutY="43.0" prefHeight="36.0" prefWidth="120.0" promptText="Es.: 200" style="-fx-background-color: #ffffff; -fx-border-color: #2a585a; -fx-border-radius: 10; -fx-background-radius: 8;" />
+
+                     <Text fill="#ffffff" layoutX="375.0" layoutY="40.0" text="a" />
+                     <ComboBox fx:id="prezzoMaxText" layoutX="395.0" layoutY="43.0" prefHeight="36.0" prefWidth="120.0" promptText="Es.: 500" style="-fx-background-color: #ffffff; -fx-border-color: #2a5a5a;-fx-border-radius: 10; -fx-background-radius: 8;" />
+
+                     <Line endX="0" endY="38.6" layoutX="540.0" layoutY="40.0" startX="0" startY="-13.6" stroke="#2a4e5a" />
+
+                     <!-- TIPOLOGIA DI VENDITA -->
+                     <Text fill="#ffffff" layoutX="560.0" layoutY="35.0" text="Tipologia di vendita">
+                         <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     </Text>
+                     <MenuButton fx:id="menuTipologia" layoutX="555.0" layoutY="43.0" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-border-color: #2a5a44;                            -fx-border-radius: 8; -fx-background-radius: 8;" text="Qualsiasi" textFill="#294c71" />
+
+                     <Line endX="0" endY="38.6" layoutX="730.0" layoutY="40.0" startX="0" startY="-13.6" stroke="#2a4e5a" />
+
+                     <!-- NUMERO STANZE -->
+                     <Text fill="#ffffff" layoutX="750.0" layoutY="38.0" text="Numero stanze">
+                         <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                           </Text>
+                     <TextField fx:id="numeroStanzeTextField" layoutX="750.0" layoutY="43.0" prefHeight="36.0" prefWidth="110.0" promptText="es. 1" style="-fx-background-color: #ffffff; -fx-border-color: #2a5a4a;                           -fx-border-radius: 8; -fx-background-radius: 8;" />
+
+                     <Line endX="0" endY="38.6" layoutX="885.0" layoutY="40.0" startX="0" startY="-13.6" stroke="#2a4e5a" />
+
+                     <!-- CLASSE ENERGETICA -->
+                     <Text fill="#ffffff" layoutX="905.0" layoutY="38.0" text="Classe energetica">
+                         <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     </Text>
+                     <MenuButton fx:id="classeMenu" layoutX="905.0" layoutY="43.0" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-border-color: #2a4e5a;                            -fx-border-radius: 8; -fx-background-radius: 8;" text="Qualsiasi" textFill="#294c71" />
+
+                     <!-- BOTTONE CERCA -->
+                     <Button fx:id="ricercaBtn" layoutX="1367.0" layoutY="26.0" onAction="#gestioneRicercaImmobile" prefHeight="54.0" prefWidth="109.0" style="-fx-background-color: linear-gradient(to bottom, #4ae2bc, #29715b);                        -fx-background-radius: 12; -fx-font-weight: bold;                        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.2, 0, 2);" text="Cerca" textFill="WHITE" />
+
+                     <!-- ERROR LABELS -->
+                     <Label fx:id="erroreComuneLbl" layoutX="14.0" layoutY="83.0" text="Inserire un comune" visible="false" />
+                     <Label fx:id="errorePrezzoDaLbl" layoutX="245.0" layoutY="83.0" text="Inserire un valore valido!" visible="false" />
+                     <Label fx:id="errorePrezzoALbl" layoutX="395.0" layoutY="83.0" text="Inserire un valore valido!" visible="false" />
+                     <Label fx:id="erroreNumeroStanzeLbl" layoutX="750.0" layoutY="83.0" text="Inserire un valore valido!" visible="false" />
+
+                 </children>
+             </Pane>
+
+                            <!-- Past searches -->
+                <Text fill="#297171" layoutX="600.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ricerche effettuate" wrappingWidth="389.2826">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+    </content>
+</ScrollPane>

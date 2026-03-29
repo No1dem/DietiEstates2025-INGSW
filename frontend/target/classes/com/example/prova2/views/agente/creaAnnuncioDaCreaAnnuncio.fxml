@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" pannable="true" styleClass="gradient-backgrounds2" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.CreaAnnuncioController">
+    <ScrollPane styleClass="gradient-backgrounds4">
+        <content>
+            <Pane prefHeight="1016.0" prefWidth="1518.0" styleClass="gradient-backgrounds4" stylesheets="@../../css/style.css">
+                <children>
+
+                    <Pane layoutX="286.0" layoutY="249.0" /> <Pane layoutX="44.0" layoutY="15.0" prefHeight="991.0" prefWidth="1459.0" style="-fx-background-radius: 28;" styleClass="container2" stylesheets="@../../css/style.css">
+                        
+                        <Pane fx:id="paneLocalita" layoutX="387.0" layoutY="98.0" prefHeight="742.0" prefWidth="1065.0" visible="false">
+                            <children>
+                                <ListView fx:id="listMaps" layoutX="12.0" layoutY="123.0" prefHeight="87.0" prefWidth="346.0" visible="false" />
+                                <Label layoutX="8.0" layoutY="-7.0" prefHeight="42.0" prefWidth="389.0" text="Località del tuo immobile" textFill="#f3f6f4">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="comuneTextField" layoutX="12.0" layoutY="89.0" onKeyTyped="#rimuoviMessaggioComune" prefHeight="35.0" prefWidth="345.0" promptText="Es.Napoli" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font></TextField>
+                                <Label layoutX="12.0" layoutY="63.0" text="Inserisci comune" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <WebView fx:id="webViewMap" layoutX="10.0" layoutY="329.0" prefHeight="358.0" prefWidth="498.0" />
+                                <Button fx:id="btnCercaMappa" layoutX="436.0" layoutY="240.0" mnemonicParsing="false" onAction="#onSearchAddress" prefHeight="36.0" prefWidth="150.0" style="-fx-cursor: hand;" styleClass="confermaIndirizzo" stylesheets="@../../css/style.css" text="Visualizza sulla mappa" />
+
+                                <TextField fx:id="indirizzoTextField" layoutX="10.0" layoutY="237.0" onKeyTyped="#rimuoviMessaggioIndirizzo" prefHeight="35.0" prefWidth="265.0" promptText="Es.Corso garibaldi" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font></TextField>
+                                <Label layoutX="10.0" layoutY="212.0" text="Inserisci Indirizzo" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="numeroCivicoTextField" layoutX="305.0" layoutY="237.0" onKeyTyped="#rimuoviMessaggioCivico" prefHeight="35.0" prefWidth="106.0" promptText="Es.15" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font></TextField>
+                                <Label layoutX="305.0" layoutY="212.0" text="N° civico" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="btnAvantiLocalita" layoutX="901.0" layoutY="645.0" mnemonicParsing="false" onAction="#attivaCaratteristiche" prefHeight="45.0" prefWidth="137.0" styleClass="bottoneLoginAdmin" stylesheets="@../../css/style.css" text="Avanti" textFill="WHITE" visible="true">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Button>
+                                <Label fx:id="erroreComune" layoutX="14.0" layoutY="108.0" text="Si prega di inserire un comune valido!" textFill="#e5ff00" visible="false">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="erroreIndirizzo" layoutX="13.0" layoutY="244.0" text="Si prega di inserire un indirizzo valido!" textFill="#e5ff00" visible="false">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="erroreCivico" layoutX="305.0" layoutY="246.0" text="Si prega di inserire un n°civico valido!" textFill="#e5ff00" visible="false">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="9.0" layoutY="308.0" text="Nella mappa sottostante verrà visualizzata la posizione del tuo immobile" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="9.0" layoutY="32.0" prefHeight="20.0" prefWidth="701.0" text="Inserisci il comune e l'indirizzo manualmente oppure clicca sulla mappa per selezionarli automaticamente" textFill="#f3f6f4">
+                                   <font>
+                                      <Font size="14.0" />
+                                   </font>
+                                </Label>
+                            </children>
+                        </Pane>
+
+                        <Pane fx:id="paneCaratteristiche" layoutX="358.0" layoutY="69.0" prefHeight="909.0" prefWidth="1071.0" visible="false">
+                            <children>
+                                <Label prefHeight="39.0" prefWidth="389.0" text="Caratteristiche" textFill="#f3f6f4">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="superficieTextField" layoutX="10.0" layoutY="71.0" onKeyTyped="#rimuoviMessaggioSuperficie" prefHeight="35.0" prefWidth="464.0" promptText="es. 120" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font></TextField>
+                                <Label layoutX="10.0" layoutY="45.0" text="Superficie commerciale ( in metri quadrati)" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="numeroStanzeTextField" layoutX="10.0" layoutY="256.0" onKeyTyped="#rimuoviMessaggioStanze" prefHeight="35.0" prefWidth="464.0" promptText="es.3" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font></TextField>
+                                <Label layoutX="11.0" layoutY="230.0" text="Numero stanze" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="10.0" layoutY="324.0" text="Locali" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <VBox layoutX="10.0" layoutY="350.0" prefHeight="131.0" prefWidth="356.0" spacing="10.0">
+                                    <children>
+                                        <HBox alignment="TOP_CENTER" prefHeight="33.0" prefWidth="358.0" style="-fx-background-color: #f3f6f4; -fx-background-radius: 3;">
+                                            <children>
+                                                <Button fx:id="btnMenoBagni" mnemonicParsing="false" prefHeight="32.0" prefWidth="48.0" style="-fx-border-radius: 0; -fx-cursor: hand;" styleClass="container2" stylesheets="@../../css/style.css" text="-" />
+                                                <Label alignment="CENTER" prefHeight="37.0" prefWidth="263.0" text="Bagni" textFill="#011638">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="btnPiuBagni" mnemonicParsing="false" prefHeight="32.0" prefWidth="48.0" style="-fx-cursor: hand;" styleClass="container2" stylesheets="@../../css/style.css" text="+" textFill="#011638" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="TOP_CENTER" prefHeight="33.0" prefWidth="358.0" style="-fx-background-color: #f3f6f4; -fx-background-radius: 3;">
+                                            <children>
+                                                <Button fx:id="btnMenoSoggiorno" mnemonicParsing="false" prefHeight="32.0" prefWidth="48.0" style="-fx-border-radius: 0; -fx-cursor: hand;" styleClass="container2" stylesheets="@../../css/style.css" text="-" />
+                                                <Label alignment="CENTER" prefHeight="37.0" prefWidth="263.0" text="Soggiorno" textFill="#011638">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="btnPiuSoggiorno" mnemonicParsing="false" prefHeight="32.0" prefWidth="48.0" style="-fx-cursor: hand;" styleClass="container2" stylesheets="@../../css/style.css" text="+" textFill="#011638" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="TOP_CENTER" prefHeight="33.0" prefWidth="358.0" style="-fx-background-color: #f3f6f4; -fx-background-radius: 3;">
+                                            <children>
+                                                <Button fx:id="btnMenoCucine" mnemonicParsing="false" prefHeight="32.0" prefWidth="48.0" style="-fx-border-radius: 0; -fx-cursor: hand;" styleClass="container2" stylesheets="@../../css/style.css" text="-" />
+                                                <Label alignment="CENTER" prefHeight="37.0" prefWidth="263.0" text="Cucine" textFill="#011638">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="btnPiuCucine" mnemonicParsing="false" prefHeight="32.0" prefWidth="48.0" style="-fx-cursor: hand;" styleClass="container2" stylesheets="@../../css/style.css" text="+" textFill="#011638" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Label fx:id="cucineLbl" layoutX="302.0" layoutY="445.0" text="0" textFill="#011638" />
+                                <Label fx:id="soggiornoLbl" layoutX="303.0" layoutY="403.0" text="0" textFill="#011638" />
+                                <Label fx:id="bagniLbl" layoutX="303.0" layoutY="357.0" text="0" textFill="#011638" />
+                                <Label layoutX="11.0" layoutY="504.0" text="Arredamento" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <VBox layoutX="16.0" layoutY="522.0" prefHeight="157.0" prefWidth="247.0">
+                                    <children>
+                                        <RadioButton fx:id="rbArr" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#rimuoviMessaggioArredamenti" prefHeight="51.0" prefWidth="348.0" style="-fx-cursor: hand;" stylesheets="@../../css/RadioButton.css" text="Arredata" textFill="#f3f6f4">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rbParzArr" alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onAction="#rimuoviMessaggioArredamenti" prefHeight="51.0" prefWidth="348.0" style="-fx-cursor: hand;" stylesheets="@../../css/RadioButton.css" text="Parzialmente arredata" textFill="#f3f6f4">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rbNonArr" alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="10.0" layoutY="128.0" mnemonicParsing="false" onAction="#rimuoviMessaggioArredamenti" prefHeight="51.0" prefWidth="348.0" style="-fx-cursor: hand;" stylesheets="@../../css/RadioButton.css" text="Non arredata" textFill="#f3f6f4">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </RadioButton>
+                                    </children>
+                                </VBox>
+                                <MenuButton fx:id="menuClasseEnergetica" layoutX="10.0" layoutY="737.0" mnemonicParsing="false" onContextMenuRequested="#rimuoviMessaggioClasseEnergetica" popupSide="TOP" prefHeight="35.0" prefWidth="464.0" style="-fx-cursor: hand;" styleClass="textPiano" stylesheets="@../../css/style.css" text="Seleziona la classe energetica" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </MenuButton>
+                                <Label layoutX="10.0" layoutY="711.0" text="Classe energetica" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="11.0" layoutY="136.0" text="Piano/i" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="errorSuperficie" layoutX="11.0" layoutY="106.0" onKeyTyped="#rimuoviMessaggioSuperficie" text="Si prega di inserire una superifice valida!" textFill="#f2ff00" visible="false">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="errorPiano" layoutX="11.0" layoutY="197.0" onKeyTyped="#rimuoviMessaggioPiano" text="Si prega di inserire un piano valido!" textFill="#f2ff00" visible="false">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="errorStanze" layoutX="11.0" layoutY="291.0" onKeyTyped="#rimuoviMessaggioStanze" text="Si prega di inserire un numero di stanze valido!" textFill="#f2ff00" visible="false">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="errorArredamento" layoutX="16.0" layoutY="668.0" onKeyTyped="#rimuoviMessaggioArredamenti" text="Si prega di inserire un tipo di arredamento!" textFill="#f2ff00" visible="false">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="errorClasse" layoutX="13.0" layoutY="772.0" onKeyTyped="#rimuoviMessaggioClasseEnergetica" text="Si prega di inserire una classe energetica valida!" textFill="#f2ff00" visible="false">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="pianiTextField" layoutX="10.0" layoutY="162.0" onKeyTyped="#rimuoviMessaggioPiano" prefHeight="35.0" prefWidth="464.0" promptText="es.1" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </TextField>
+                                <ImageView fx:id="imgStanze" fitHeight="29.0" fitWidth="31.0" layoutX="493.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true" />
+                                <Button fx:id="btnAvantiCarat" layoutX="860.0" layoutY="826.0" mnemonicParsing="false" onAction="#attivaPrezzi" prefHeight="47.0" prefWidth="133.0" styleClass="bottoneLoginAdmin" stylesheets="@../../css/style.css" text="Avanti" textFill="WHITE">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Button>
+                                <Label fx:id="errorAscensore" layoutX="11.0" layoutY="870.0" onKeyTyped="#rimuoviMessaggioClasseEnergetica" text="Si prega di inserire una scelta valida!" textFill="#f2ff00" visible="false">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fx:id="imgPiano" fitHeight="32.0" fitWidth="38.0" layoutX="490.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true" />
+                                <Label layoutX="10.0" layoutY="806.0" text="Presenza dell'ascensore" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fx:id="imgSuperficie" fitHeight="31.0" fitWidth="35.0" layoutX="491.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
+                                <MenuButton fx:id="menuAscensore" layoutX="10.0" layoutY="832.0" mnemonicParsing="false" onContextMenuRequested="#rimuoviMessaggioClasseEnergetica" popupSide="TOP" prefHeight="35.0" prefWidth="464.0" style="-fx-cursor: hand;" styleClass="textPiano" stylesheets="@../../css/style.css" text="Seleziona la presenza dell'ascensore" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </MenuButton>
+                            </children>
+                        </Pane>
+
+                        <Pane fx:id="panePrezzi" layoutX="371.0" layoutY="116.0" prefHeight="610.0" prefWidth="1052.0" visible="false">
+                            <children>
+                                <ImageView fx:id="imgPrezzo" fitHeight="32.0" fitWidth="35.0" layoutX="372.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" />
+                                <Label prefHeight="55.0" prefWidth="389.0" text="Prezzi" textFill="#f3f6f4">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="prezziTextField" layoutX="8.0" layoutY="79.0" onKeyTyped="#rimuoviMessaggioPrezzo" prefHeight="35.0" prefWidth="357.0" promptText="es. 200.000" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font></TextField>
+                                <Label layoutX="8.0" layoutY="53.0" text="Prezzo ( € )" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="speseCondominioTextField" layoutX="8.0" layoutY="207.0" onKeyTyped="#rimuoviMessaggioSpesa" prefHeight="35.0" prefWidth="358.0" promptText="es .50" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font></TextField>
+                                <Label layoutX="8.0" layoutY="181.0" text="Spese condominiali ( €/mese )" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="prezzoErrore" layoutX="8.0" layoutY="114.0" onKeyTyped="#rimuoviMessaggioPrezzo" text="Si prega di inserire un prezzo valido!" textFill="#e5ff00" visible="false">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="speseErrore" layoutX="8.0" layoutY="242.0" onKeyTyped="#rimuoviMessaggioSpesa" text="Si prega di inserire un prezzo valido!" textFill="#e5ff00" visible="false">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="btnAvantiPrezzi" layoutX="887.0" layoutY="497.0" mnemonicParsing="false" onAction="#attivaDocumenti" prefHeight="45.0" prefWidth="127.0" styleClass="bottoneLoginAdmin" stylesheets="@../../css/style.css" text="Avanti" textFill="WHITE" visible="true">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                                <ImageView fx:id="imgSpese" fitHeight="32.0" fitWidth="35.0" layoutX="372.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </Pane>
+
+                        <Pane fx:id="paneFoto" layoutX="387.0" layoutY="123.0" prefHeight="691.0" prefWidth="1033.0" visible="false">
+                            <children>
+                                <Label layoutX="3.0" prefHeight="55.0" prefWidth="389.0" text="Foto" textFill="#f3f6f4">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="5.0" layoutY="45.0" text="Carica le foto dell'immobile cliccando il bottone sottostante.(Si prega di inserire almeno una foto)" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="btnFoto" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="3.0" layoutY="74.0" mnemonicParsing="false" onAction="#caricaImmagine" prefHeight="97.0" prefWidth="181.0" styleClass="bottoneTornaIndietro" stylesheets="@../../css/style.css" text="Inserisci foto" textFill="#011636">
+                                    <graphic>
+                                        <ImageView fitHeight="52.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../images/icons8-casa-giardino-50.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Button>
+                                <ScrollPane fx:id="scrollImage" layoutX="8.0" layoutY="266.0" prefHeight="278.0" prefWidth="728.0" />
+                                <Label fx:id="errorFoto" layoutX="8.0" layoutY="544.0" text="Si prega di inserire almeno una foto!" textFill="#e1ff00" visible="false">
+                                    <font>
+                                        <Font size="19.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="8.0" layoutY="225.0" prefHeight="55.0" prefWidth="565.0" text="Nell'area sottostante verranno visualizzate le foto che inserisci!" textFill="#f3f6f4">
+                                    <font>
+                                        <Font name="System Bold" size="17.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="btnAvantiFoto" layoutX="854.0" layoutY="623.0" mnemonicParsing="false" onAction="#attivaDescrizione" prefHeight="47.0" prefWidth="133.0" styleClass="bottoneLoginAdmin" stylesheets="@../../css/style.css" text="Avanti" textFill="WHITE" visible="false">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+
+                        <Pane fx:id="paneDescrizione" layoutX="382.0" layoutY="126.0" prefHeight="585.0" prefWidth="1056.0" visible="false">
+                            <children>
+                                <TextField fx:id="descrizioneTextField" alignment="TOP_LEFT" layoutX="19.0" layoutY="204.0" onKeyTyped="#rimuoviMessaggioDescrizione" prefHeight="176.0" prefWidth="625.0" promptText="max 3000 caratteri" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </TextField>
+                                <Label layoutX="8.0" layoutY="5.0" prefHeight="39.0" prefWidth="389.0" text="Descrizione" textFill="#f3f6f4">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="20.0" layoutY="177.0" text="Inserisci una descrizione dell'immobile" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="btnCarica" layoutX="906.0" layoutY="472.0" mnemonicParsing="false" onAction="#generaAnnuncio" prefHeight="53.0" prefWidth="126.0" styleClass="bottoneLoginAdmin" text="Carica">
+                                    <font>
+                                        <Font name="System Bold" size="17.0" />
+                                    </font>
+                                </Button>
+                                <TextField fx:id="titoloTextField" alignment="TOP_LEFT" layoutX="19.0" layoutY="81.0" onKeyTyped="#rimuoviMessaggioTitolo" prefHeight="34.0" prefWidth="625.0" promptText="Es.Baita sul mare a pochi metri dal centro" styleClass="textField" stylesheets="@../../css/style.css">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </TextField>
+                                <Label layoutX="19.0" layoutY="54.0" text="Inserisci il titolo con cui verrà visualizzato l'immobile" textFill="#f3f6f4">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="errorTitolo" layoutX="20.0" layoutY="115.0" text="Si prega di inserire un titolo valido!" textFill="#eaff00" visible="false">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="errorDes" layoutX="20.0" layoutY="380.0" text="Si prega di inserire una descrizione valida!" textFill="#eaff00" visible="false">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+
+                        <Pane fx:id="paneCategoria" layoutX="362.0" layoutY="71.0" prefHeight="762.0" prefWidth="1079.0" visible="false">
+                            <children>
+                                <Button fx:id="btnAvantiCategoria" layoutX="890.0" layoutY="683.0" mnemonicParsing="false" onAction="#attivaLocalita" prefHeight="47.0" prefWidth="133.0" styleClass="bottoneLoginAdmin" stylesheets="@../../css/style.css" text="Avanti" textFill="WHITE" visible="true">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Button>
+                                <Pane layoutX="14.0" layoutY="7.0" prefHeight="457.0" prefWidth="455.0" style="-fx-background-radius: 25.0; -fx-border-radius: 25;" styleClass="container" stylesheets="@../../css/style.css">
+                                    <children>
+                                        <Label layoutX="20.0" layoutY="-8.0" prefHeight="77.0" prefWidth="237.0" text="Seleziona categoria" textFill="#f3f6f4">
+                                            <font>
+                                                <Font name="System Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <VBox fx:id="vboxCat" layoutX="16.0" layoutY="50.0" prefHeight="393.0" prefWidth="247.0">
+                                            <children>
+                                                <RadioButton fx:id="rbRes" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Residenziale" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbApp" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Appartamento" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbAtt" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Attico" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbOpn" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Open space" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbLoft" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Loft" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbMans" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Mansarda" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbVilla" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Villa a piu piani" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbBaita" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Baita" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </Pane>
+                                <Pane layoutX="14.0" layoutY="512.0" prefHeight="171.0" prefWidth="270.0" style="-fx-background-radius: 25.0; -fx-border-radius: 25;" styleClass="container" stylesheets="@../../css/style.css">
+                                    <children>
+                                        <Label layoutX="12.0" layoutY="-3.0" prefHeight="77.0" prefWidth="196.0" text="Vendi o Affitti" textFill="#f3f6f4">
+                                            <font>
+                                                <Font name="System Bold" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <VBox layoutX="13.0" layoutY="59.0" prefHeight="93.0" prefWidth="238.0">
+                                            <children>
+                                                <RadioButton fx:id="rbVendi" alignment="CENTER_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#rimuoviMessaggioVendita" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Vendi" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbAffitti" alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onAction="#rimuoviMessaggioVendita" prefHeight="51.0" prefWidth="348.0" stylesheets="@../../css/RadioButton.css" text="Affitti" textFill="#f3f6f4">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </Pane>
+                                <Label fx:id="venditaErrore" layoutX="14.0" layoutY="683.0" onKeyTyped="#rimuoviMessaggioVendita" text="Si prega di inserire una tipologia di vendita!" textFill="#e5ff00" visible="false">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="errorTipologia" layoutX="22.0" layoutY="464.0" onKeyTyped="#rimuoviMessaggioVendita" text="Si prega di inserire una tipologia di immobile!" textFill="#e5ff00" visible="false">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+
+                        <VBox layoutX="36.0" layoutY="102.0" prefHeight="634.0" prefWidth="287.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#attivaCategoria" prefHeight="95.0" prefWidth="306.0" styleClass="paneImmobili">
+                                    <graphic>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <ImageView fitHeight="53.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/icons8-sorting-48.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="77.0" layoutY="34.0" text="Categoria" textFill="#f3f6f4">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </Pane>
+                                            </children>
+                                        </HBox>
+                                    </graphic></Button>
+                                <Button fx:id="btnLocalita" mnemonicParsing="false" onAction="#attivaLocalita" prefHeight="95.0" prefWidth="306.0" styleClass="paneImmobili">
+                                    <graphic>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <ImageView fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/icons8-codice-regione-48.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="84.0" layoutY="34.0" text="Localita" textFill="#f3f6f4">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </Pane>
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="btnCaratteristiche" mnemonicParsing="false" onAction="#attivaCaratteristiche" prefHeight="95.0" prefWidth="306.0" styleClass="paneImmobili">
+                                    <graphic>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <ImageView fitHeight="53.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/icons8-domotica-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="63.0" layoutY="35.0" text="Caratteristiche" textFill="#f3f6f4">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </Pane>
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="btnPrezzi" mnemonicParsing="false" onAction="#attivaPrezzi" prefHeight="95.0" prefWidth="306.0" styleClass="paneImmobili">
+                                    <graphic>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <ImageView fitHeight="53.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/icons8-cartellino-prezzo-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="84.0" layoutY="31.0" text="Prezzi" textFill="#f3f6f4">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </Pane>
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="btnDocumenti" mnemonicParsing="false" onAction="#attivaDocumenti" prefHeight="95.0" prefWidth="306.0" styleClass="paneImmobili">
+                                    <graphic>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <ImageView fitHeight="53.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/icons8-documenti-50.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="85.0" layoutY="34.0" text="Foto" textFill="#f3f6f4">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </Pane>
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="btnDescrizione" mnemonicParsing="false" onAction="#attivaDescrizione" prefHeight="95.0" prefWidth="306.0" styleClass="paneImmobili">
+                                    <graphic>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <ImageView fitHeight="53.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/icons8-descrizione-68.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="70.0" layoutY="35.0" text="Descrizione" textFill="#f3f6f4">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </Pane>
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+
+                        <Label layoutX="87.0" layoutY="26.0" prefHeight="41.0" prefWidth="350.0" text="Crea il tuo nuovo annuncio" textFill="#f3f6f4">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        
+                        <Button fx:id="btnIndietro" layoutX="16.0" layoutY="16.0" mnemonicParsing="false" onAction="#closeWindows" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                            <graphic>
+                                <ImageView fitHeight="54.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/tornaIndietroBottone.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <Line endX="700.39990234375" endY="-7.62939453125E-6" layoutX="622.0" layoutY="50.0" startX="-198.79998779296875" startY="-7.62939453125E-6" stroke="#f3f6f4" />
+                        <ImageView fitHeight="95.0" fitWidth="117.0" layoutX="1335.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/DE25Logo.png" />
+                            </image>
+                        </ImageView>
+                        <Line endX="-198.7999267578125" endY="847.0000610351562" layoutX="522.0" layoutY="106.0" startX="-198.79998779296875" startY="-7.62939453125E-6" stroke="#f3f6f4" />
+                    </Pane>
+                    <Pane layoutX="155.0" layoutY="948.0" prefHeight="0.0" prefWidth="1363.0" />
+                </children>
+            </Pane>
+        </content>
+    </ScrollPane>
+</ScrollPane>

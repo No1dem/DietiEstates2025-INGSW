@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #145858, #3e838c);" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.notifiche.VisualizzaNotificheGestoreController">
+   <children>
+      
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.2);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+         <children>
+            <Label text="Le tue notifiche" textFill="#f3f6f4">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Pane HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/DE25Logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+
+      <StackPane alignment="TOP_CENTER" layoutY="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <Pane fx:id="paneAnnullaVisita" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="350.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 3);" visible="false">
+               <children>
+                  <Label fx:id="labelAnnullaVisita" layoutX="20.0" layoutY="10.0" text="Visita accettata" textFill="#333333">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                  </Label>
+                  <Label fx:id="annullaInvio" layoutX="270.0" layoutY="10.0" style="-fx-cursor: hand;" text="Annulla" textFill="#d03434" underline="true">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+
+      <VBox spacing="15.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0">
+         <padding>
+            <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+         </padding>
+         <children>
+            
+            <StackPane alignment="CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                  
+                  <VBox fx:id="notificheContainer" alignment="TOP_CENTER" spacing="10.0" />
+
+                  <VBox alignment="CENTER" pickOnBounds="false" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="immagineNoNotifica" fitHeight="90.0" fitWidth="90.0" preserveRatio="true" visible="false">
+                           <image><Image url="@../../images/sleep-mode (1).png" /></image>
+                        </ImageView>
+                        <Label fx:id="scrittaNoNotifica" text="Sei aggiornato! Al momento non ci sono notifiche." textFill="WHITE" visible="false">
+                           <font><Font name="System Bold" size="20.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+
+                  <VBox alignment="CENTER" pickOnBounds="false" spacing="8.0">
+                     <children>
+                        <ImageView fx:id="immagineCarica" fitHeight="100.0" fitWidth="100.0" preserveRatio="true">
+                           <image><Image url="@../../images/DE25Logo.png" /></image>
+                        </ImageView>
+                        <Label fx:id="immagineCarica1" text="Per favore dacci un momento" textFill="WHITE">
+                           <font><Font name="System Bold" size="20.0" /></font>
+                        </Label>
+                        <Label fx:id="immagineCarica2" text="stiamo caricando le tue notifiche..." textFill="#b2d8d8">
+                           <font><Font size="16.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+
+               </children>
+            </StackPane>
+
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+               <children>
+                  <Label fx:id="singoleCategorie" onMouseClicked="#apriPaginaAttivaNotifiche" style="-fx-cursor: hand;" text="Attiva/Disattiva categorie notifiche" textFill="#b2d8d8" underline="true" visible="false">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                  </Label>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <Label fx:id="tornaIndietro" onMouseClicked="#apriPaginaAttivaNotifiche" style="-fx-cursor: hand;" text="Vedi notifiche precedenti" textFill="#b2d8d8" underline="true" visible="false">
+                     <font><Font name="System Bold" size="14.0" /></font>
+                  </Label>
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+
+   </children>
+</AnchorPane>

@@ -1,0 +1,16 @@
+
+t
+java:S1192¨"XDefine a constant instead of duplicating this literal "-fx-text-fill: #011638;" 3 times.(¿ÒØ ÿÿÿÿÿ
+c
+java:S1192©"LDefine a constant instead of duplicating this literal "System Bold" 3 times.(ãŞüâ
+¢
+java:S1192"ŠDefine a constant instead of duplicating this literal "-fx-background-color: white; -fx-background-radius: 30; -fx-cursor: hand;" 5 times.(¾ ×±
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¢ŒÉ¤
+œ
+java:S1186n"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İØÏ“ûÿÿÿÿ
+B
+java:S1602b",Remove useless curly braces around statement(¥—ığ
+H
+java:S1602‘",Remove useless curly braces around statement(ûÓšùÿÿÿÿ
+C
+java:S1602œ",Remove useless curly braces around statement(ìÖğí

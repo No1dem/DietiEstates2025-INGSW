@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #145858, #3e838c);" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.notifiche.InfoAboutPrenotazioneClienteController">
+   <children>
+      <VBox maxWidth="700.0" spacing="25.0" style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);">
+         <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="30.0" />
+         </padding>
+         <children>
+            
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Dettagli della prenotazione" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label text="Verifica lo stato e i dati dell'appuntamento." textFill="#b2d8d8">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/DE25Logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+
+            <VBox spacing="15.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 15; -fx-padding: 15;">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/icons8-casa-64.png" />
+                           </image>
+                        </ImageView>
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label text="Immobile" textFill="#b2d8d8">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="casaLbl" text="Stiamo recuperando l'immobile..." textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 15; -fx-padding: 15;">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/icons8-position-50.png" />
+                           </image>
+                        </ImageView>
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label text="Indirizzo" textFill="#b2d8d8">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="viaLbl" text="Stiamo recuperando la posizione..." textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 15; -fx-padding: 15;">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/icons8-time-50.png" />
+                           </image>
+                        </ImageView>
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label text="Data e Ora" textFill="#b2d8d8">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="oraLbl" text="Stiamo recuperando l'orario..." textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 15; -fx-padding: 15;">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/icons8-real-agent-50.png" />
+                           </image>
+                        </ImageView>
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label text="Agente" textFill="#b2d8d8">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="nomeLbl" text="Stiamo recuperando l'agente..." textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+
+            <Pane prefHeight="10.0" />
+
+            <HBox alignment="CENTER" spacing="40.0">
+               <children>
+                  <Button fx:id="btnRifiuta" mnemonicParsing="false" onAction="#rifiutaVisita" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #E63946; -fx-background-radius: 25; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="Rifiuta / Annulla" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnAccetta" mnemonicParsing="false" onAction="#accettaVisita" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #34D058; -fx-background-radius: 25; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="Ok, letto" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+   </children>
+</VBox>

@@ -1,0 +1,202 @@
+/* =========================
+   GRADIENTI
+========================= */
+.gradient-backgrounds{
+    -fx-background-color: linear-gradient(from 100% 100% to 0% 0%, #145858, #E0F2F1);
+}
+
+.gradient-backgrounds2{
+    -fx-background-color: linear-gradient(from 5% 5% to 100% 100%, #145858, #80CBC4);
+}
+
+.gradient-backgrounds3{
+    -fx-background-color: linear-gradient(from 2% 2% to 100% 100%, #004D40, #A7EAE6);
+}
+
+.gradient-backgrounds4{
+    -fx-background-color: linear-gradient(from 50% 0% to 200% 100%, #145858, #E0F2F1);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container{
+    -fx-background-color: rgba(224, 242, 241, 0.25);
+    -fx-background-radius: 10;
+}
+
+.container2{
+    -fx-background-color: rgba(20, 88, 88, 0.2);
+    -fx-background-radius: 10;
+}
+
+/* =========================
+   INPUT
+========================= */
+.textField, .textFieldAnnunci, .passwordAgenteInfo{
+    -fx-background-color: rgba(255, 255, 255, 0.35);
+    -fx-background-radius: 10;
+    -fx-text-fill: #145858;
+    -fx-prompt-text-fill: #568B8B;
+}
+
+.textFieldAnnunci{
+    -fx-wrap-text: true;
+}
+
+.textPiano{
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 10;
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+.textarea, .textarea2{
+    -fx-background-color: transparent;
+    -fx-text-fill: #145858;
+    -fx-font-size: 13px;
+    -fx-padding: 8px;
+}
+
+/* =========================
+   BOTTONI LINK
+========================= */
+.bottoneDimenticatoPassword{
+    -fx-cursor: hand;
+    -fx-text-fill: #145858;
+    -fx-underline: true;
+}
+
+.bottoneDimenticatoPassword:hover{
+    -fx-text-fill: #20B2AA;
+}
+
+/* =========================
+   BOTTONI PRINCIPALI
+========================= */
+.bottoneLoginAdmin,
+.cerca,
+.buttonAggiornaRicerca{
+    -fx-background-color: #145858;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.bottoneLoginAdmin:hover,
+.cerca:hover,
+.buttonAggiornaRicerca:hover{
+    -fx-background-color: #20B2AA;
+}
+
+/* =========================
+   BOTTONI VERDI
+========================= */
+.bottoniVerdi,
+.bottoneModificaProfilo,
+.crea,
+.btnAccettaInfo{
+    -fx-background-color: #26A69A;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+.bottoniVerdi:hover,
+.bottoneModificaProfilo:hover,
+.crea:hover,
+.btnAccettaInfo:hover{
+    -fx-background-color: #20B2AA;
+}
+
+/* =========================
+   BOTTONI SECONDARI
+========================= */
+.bottoneTornaIndietro,
+.indietroCrea,
+.btnLasciaRecensione{
+    -fx-background-color: #E0F2F1;
+    -fx-text-fill: #145858;
+    -fx-border-color: #145858;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+}
+
+.bottoneTornaIndietro:hover,
+.indietroCrea:hover,
+.btnLasciaRecensione:hover{
+    -fx-background-color: #B2DFDB;
+}
+
+/* =========================
+   AZIONI SPECIALI
+========================= */
+.btnPrenotaVisita,
+.confermaIndirizzo{
+    -fx-background-color: rgba(38, 166, 154, 0.7);
+    -fx-text-fill: #145858;
+    -fx-border-color: #145858;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.btnPrenotaVisita:hover,
+.confermaIndirizzo:hover{
+    -fx-background-color: rgba(32, 178, 170, 0.9);
+}
+
+/* =========================
+   RIFIUTO
+========================= */
+.btnRifiutoInfo{
+    -fx-background-color: #E57373;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+.btnRifiutoInfo:hover{
+    -fx-background-color: #EF5350;
+}
+
+/* =========================
+   PANE & RICERCA
+========================= */
+.paneImmobili:hover,
+.pane-custom:hover{
+    -fx-background-color: rgba(32, 178, 170, 0.15);
+}
+
+.PaneRicerca,
+.PaneAnnunciInfo{
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-border-color: #1b8f89;
+    -fx-border-radius: 10 10 10 60;
+    -fx-background-radius: 10 10 10 60;
+}
+
+.labelRicerca{
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-border-color: #20B2AA;
+    -fx-border-radius: 10 0 0 60;
+    -fx-background-radius: 10 0 0 60;
+}
+
+/* =========================
+   COMBOBOX & SOCIAL
+========================= */
+.combo-box{
+    -fx-border-color: #145858;
+    -fx-background-color: #F0FDFC;
+}
+
+.social{
+    -fx-background-color: #E0F2F1;
+    -fx-background-radius: 15;
+    -fx-cursor: hand;
+}
+
+.social:hover{
+    -fx-background-color: #B2DFDB;
+}

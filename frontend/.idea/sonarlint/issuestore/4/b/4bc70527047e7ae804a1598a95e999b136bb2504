@@ -1,0 +1,8 @@
+
+B
+java:S1602;",Remove useless curly braces around statement(ÃÉþ©
+E	java:S106j"+Replace this use of System.out by a logger.(¥¤ˆœÿÿÿÿÿ
+J
+java:S1602‡",Remove useless curly braces around statement(ìÖðí8£Á½¥Û2
+J
+java:S2864’"4Iterate over the "entrySet" instead of the "keySet".(ˆ‰¢{

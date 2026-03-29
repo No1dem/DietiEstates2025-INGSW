@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" style="-fx-background-color: linear-gradient(to bottom, #145858, #3e838c);" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.notifiche.DisattivaCategorieClienteController">
+   <children>
+      
+      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="950.0" style="-fx-background-color: rgba(0,0,0,0.2);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+         <children>
+            <Button fx:id="tornaAllaHomeBtn" mnemonicParsing="false" style="-fx-cursor: hand; -fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tornaIndietroBottone.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label text="Gestisci le tue notifiche" textFill="#f3f6f4">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Label>
+            <Pane HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/DE25Logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+
+      <VBox style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
+         <padding>
+            <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+         </padding>
+         <children>
+            
+            <StackPane VBox.vgrow="ALWAYS" pickOnBounds="false">
+               <children>
+
+                  <VBox alignment="CENTER" pickOnBounds="false" spacing="15.0">
+                     <children>
+                        <ImageView fx:id="logoCar" fitHeight="130.0" fitWidth="130.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/DE25Logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="scrittaCar" text="Stiamo recuperando i tuoi dati, un momento..." textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+
+                  <VBox alignment="CENTER" pickOnBounds="false" spacing="15.0">
+                     <children>
+                        <ImageView fx:id="immagineNoNot" fitHeight="100.0" fitWidth="100.0" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../images/icons8-penna-100.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="scrittaNoNot" text="Attualmente non ci sono categorie di notifiche configurabili." textFill="WHITE" visible="false">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="scrittaNoNot2" text="Resta aggiornato per eventuali novità!" textFill="#b2d8d8" visible="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+
+                  <VBox alignment="TOP_CENTER" pickOnBounds="false" spacing="20.0">
+                     <children>
+                        
+                        <Label fx:id="scrittaInAlto" text="Seleziona le categorie di notifiche da attivare o disattivare:" textFill="WHITE" visible="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+
+                        <Pane fx:id="paneConsiglioImmobile" prefHeight="100.0" prefWidth="770.0" style="-fx-background-color: rgba(255, 255, 255, 0.15); -fx-background-radius: 15; -fx-border-color: rgba(255,255,255,0.3); -fx-border-radius: 15; -fx-border-width: 1;" visible="false">
+                           <children>
+                              <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="25.0" layoutY="28.0">
+                                 <image>
+                                    <Image url="@../../images/icons8-new-message-50.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="consigliImmobileCategoria" layoutX="90.0" layoutY="20.0" text="Consiglio immobile" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="90.0" layoutY="50.0" text="Notifica che arriva quando capiamo che un immobile potrebbe essere per te." textFill="#b2d8d8">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="checkBoxConsiglioImmobile" layoutX="660.0" layoutY="35.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Attiva" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </Pane>
+
+                        <Pane fx:id="paneEsitoViste" prefHeight="100.0" prefWidth="770.0" style="-fx-background-color: rgba(255, 255, 255, 0.15); -fx-background-radius: 15; -fx-border-color: rgba(255,255,255,0.3); -fx-border-radius: 15; -fx-border-width: 1;" visible="false">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="22.0" layoutY="25.0">
+                                 <image>
+                                    <Image url="@../../images/icons8-casa-64.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="esitoCategoriaVisita" layoutX="90.0" layoutY="20.0" text="Esito visita" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="90.0" layoutY="50.0" text="Notifica che arriva quando una tua visita viene accettata o rifiutata dagli agenti." textFill="#b2d8d8">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="checkBoxesitoCategoria" layoutX="660.0" layoutY="35.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Attiva" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </Pane>
+
+                        <Pane VBox.vgrow="ALWAYS" />
+
+                        <HBox alignment="BOTTOM_RIGHT" pickOnBounds="false" prefHeight="50.0">
+                           <children>
+                              <Button fx:id="btnAggiorna" mnemonicParsing="false" onAction="#aggiornaCategorie" prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #34D058; -fx-background-radius: 20; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="Salva Modifiche" textFill="WHITE" visible="false">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+
+                     </children>
+                  </VBox>
+
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+
+   </children>
+</AnchorPane>

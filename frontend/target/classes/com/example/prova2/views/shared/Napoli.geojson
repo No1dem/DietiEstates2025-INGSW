@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Napoli"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [14.2105, 40.8522],
+            [14.2205, 40.8522],
+            [14.2205, 40.8622],
+            [14.2105, 40.8622],
+            [14.2105, 40.8522]
+          ]
+        ]
+      }
+    }
+  ]
+}

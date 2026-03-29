@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="480.0" style="-fx-background-radius: 0;" styleClass="gradient-backgrounds1" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.ModalController">
+   <children>
+      <ImageView fitHeight="154.0" fitWidth="157.0" layoutX="161.0" layoutY="81.0">
+         <image>
+            <Image url="@../../images/icn-done.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="24.0" layoutY="14.0" text="Cambia foto">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="btnFoto" fitHeight="46.0" fitWidth="44.0" layoutX="66.0" layoutY="287.0">
+         <image>
+            <Image url="@../../images/upload-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cestinoButton" fitHeight="46.0" fitWidth="44.0" layoutX="66.0" layoutY="378.0">
+         <image>
+            <Image url="@../../images/icons8-trash-64.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelUploadFoto" layoutX="120.0" layoutY="300.0" prefHeight="17.0" prefWidth="143.0" style="-fx-cursor: hand;" text="Cambia foto" textFill="#1800b4">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelRimuoviFoto" layoutX="120.0" layoutY="388.0" prefHeight="17.0" prefWidth="143.0" style="-fx-cursor: hand;" text="Rimuovi foto" textFill="#1800b4">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="loginButton" disable="true" layoutX="337.0" layoutY="475.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="127.0" styleClass="bottoneLoginAdmin" stylesheets="@../../css/style.css" text="Salva" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="tornaHome" layoutX="25.0" layoutY="475.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="127.0" style="-fx-cursor: hand; -fx-border-color: black;" styleClass="bottoneTornaIndietro" text="Annulla" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

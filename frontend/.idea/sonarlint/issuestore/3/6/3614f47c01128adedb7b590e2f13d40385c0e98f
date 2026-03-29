@@ -1,0 +1,31 @@
+
+~
+java:S11042"\Make bottoneNoAnnunci a static final constant or non-public and provide accessors if needed.(««Õ§şÿÿÿÿ8’İƒ¬Û2
+z
+java:S11043"]Make scrittaNoAnnunci1 a static final constant or non-public and provide accessors if needed.(­½Åë8“İƒ¬Û2
+
+java:S11044"]Make scrittaNoAnnunci2 a static final constant or non-public and provide accessors if needed.(«ëŠŠüÿÿÿÿ8“İƒ¬Û2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¥•Óùûÿÿÿÿ8•İƒ¬Û2
+[
+java:S1854b"9Remove this useless assignment to local variable "third".(»Áğşÿÿÿÿ8¡°•­Û2
+W
+java:S1854`":Remove this useless assignment to local variable "second".(à»ôÈ8¡°•­Û2
+V
+java:S1854\"9Remove this useless assignment to local variable "first".(Àø£Ñ8¡°•­Û2
+G
+java:S1481\"*Remove this unused "first" local variable.(Àø£Ñ8§°•­Û2
+H
+java:S1481`"+Remove this unused "second" local variable.(à»ôÈ8¨°•­Û2
+L
+java:S1481b"*Remove this unused "third" local variable.(»Áğşÿÿÿÿ8ª°•­Û2
+Y
+java:S2696·"6Make the enclosing method "static" or remove this set.(äå™£úÿÿÿÿ8Ë°•­Û2
+H	java:S106º"+Replace this use of System.out by a logger.(”äì8Ë°•­Û2
+T
+java:S2696Ç"6Make the enclosing method "static" or remove this set.(Õá¢†8Í°•­Û2
+S
+java:S2209Ç"5Change this instance-reference to a static reference.(Õá¢†8Ï°•­Û2
+H	java:S106Ï"+Replace this use of System.out by a logger.(Ñ¥¡”8Ğ°•­Û2
+O
+java:S1602ì",Remove useless curly braces around statement(ø•ßÎıÿÿÿÿ8Ö°•­Û2
+M	java:S106÷"+Replace this use of System.out by a logger.(…ŒÄ®úÿÿÿÿ8Ú°•­Û2

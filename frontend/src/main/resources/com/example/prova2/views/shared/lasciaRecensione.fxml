@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="990.0" styleClass="gradient-backgrounds4" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.LasciaRecensioneController">
+   <children>
+      
+      <AnchorPane prefHeight="80.0" prefWidth="990.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="40.0" layoutY="28.0" text="DietiEstates25" textFill="#f3f6f4">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="860.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/DE25Logo.png" />
+               </image>
+            </ImageView>
+            <Line endX="910.0" layoutX="40.0" layoutY="80.0" stroke="#b2d8d8" strokeWidth="1.5" />
+         </children>
+      </AnchorPane>
+
+      <VBox alignment="TOP_CENTER" layoutX="45.0" layoutY="110.0" prefHeight="350.0" prefWidth="900.0" spacing="25.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="110.0">
+         <children>
+            
+            <VBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Label text="Lascia la tua recensione a" textFill="#f3f6f4">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nomeAgenteRecensioneLabel" text="Nome Agente" textFill="#34D058">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label text="Il tuo feedback è prezioso per aiutarci a migliorare il nostro servizio." textFill="#b2d8d8">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <VBox alignment="CENTER" prefHeight="230.0" prefWidth="900.0" spacing="20.0" style="-fx-background-color: rgba(0,0,0,0.15); -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+               <padding>
+                  <Insets bottom="20.0" left="40.0" right="40.0" top="30.0" />
+               </padding>
+               <children>
+                  <Label text="1. Inserisci la tua valutazione" textFill="#f3f6f4">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+
+                  <StackPane fx:id="valutazionePane" prefHeight="80.0" prefWidth="800.0" />
+
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="60.0" prefWidth="800.0">
+                     <children>
+                        <Button fx:id="btnConferma" disable="true" mnemonicParsing="false" onAction="#setValutazione" prefHeight="50.0" prefWidth="200.0" styleClass="btnPrenotaVisita" style="-fx-background-radius: 25; -fx-cursor: hand;" text="CONFERMA">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

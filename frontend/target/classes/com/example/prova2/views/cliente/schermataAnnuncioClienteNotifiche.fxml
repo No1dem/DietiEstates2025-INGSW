@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1133.0" prefWidth="1540.0" style="-fx-background-color: linear-gradient(to bottom, #FFF5F5, #3e838c);" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prova2.controller.SchermataAnnuncioController">
+   <children>
+      <AnchorPane prefHeight="1136.0" prefWidth="1540.0" styleClass="container" stylesheets="@../../css/style.css">
+         <children>
+
+            <AnchorPane layoutX="20.0" layoutY="18.0" prefHeight="82.0" prefWidth="1491.0" style="-fx-border-width: 5px;  -fx-border-color: #65898f; -fx-background-color: #426570; ">
+               <children>
+                  <Pane layoutX="-8.0" layoutY="-8.0" prefHeight="80.0" prefWidth="1496.0" style="-fx-background-color: #145858; -fx-border-width: 0;">
+                     <children>
+                        <Pane layoutX="1420.0" layoutY="20.0" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: #FFF5F5; -fx-border-color: #284650; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 1; -fx-cursor: hand;">
+                           <children>
+                              <Button fx:id="btnUserDashboard" layoutX="-5.0" layoutY="-4.0" mnemonicParsing="false" onAction="#apriDashboard" prefHeight="47.0" prefWidth="52.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fx:id="fotoProfilo" fitHeight="25.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/icons8-ospite-24.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/DE25Logo.png" />
+                           </image>
+                        </ImageView>
+                        <Hyperlink fx:id="linkHome" layoutX="75.0" layoutY="20.0" onAction="#setLinkHome" style="-fx-underline: false;" text="DietiEstates25" textFill="#fafafa">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+
+            <Button fx:id="btnIndietro2" layoutX="20.0" layoutY="110.0" mnemonicParsing="false" onAction="#tornaHome" style="-fx-background-color: rgba(20, 88, 88, 0.8); -fx-background-radius: 20; -fx-cursor: hand;" text="Torna alla home" textFill="#f3f6f4" visible="false">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icons8-back-button-24.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+
+            <Label fx:id="scrittaCaricamento" alignment="CENTER" layoutX="369.0" layoutY="115.0" prefHeight="39.0" prefWidth="802.0" text="Un momento stiamo recuperando i dati dell'immobile..." textFill="#145858">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+
+            <Pane fx:id="paneAnnullaVisita" layoutX="625.0" layoutY="110.0" prefHeight="47.0" prefWidth="290.0" style="-fx-background-color: #34D058; -fx-background-radius: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);" visible="false">
+               <children>
+                  <Label layoutX="20.0" layoutY="8.0" prefHeight="32.0" prefWidth="146.0" text="Visita prenotata!" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="annullaTasto" layoutX="195.0" layoutY="8.0" onMouseClicked="#annulla" prefHeight="32.0" prefWidth="80.0" style="-fx-cursor: hand;" text="Annulla" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+
+            <Pane fx:id="paneSuccessoRecensione" layoutX="578.0" layoutY="110.0" prefHeight="47.0" prefWidth="383.0" style="-fx-background-color: #34D058; -fx-background-radius: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="9.0" layoutY="8.0" prefHeight="32.0" prefWidth="365.0" text="La recensione è stata inviata con successo!" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+
+            <ScrollPane fx:id="annunciScrollPane" hbarPolicy="NEVER" layoutX="20.0" layoutY="160.0" prefHeight="950.0" prefWidth="1500.0" style="-fx-background-color: transparent; -fx-background: transparent;" stylesheets="@../../css/ScrollPane2.css" vbarPolicy="NEVER">
+               <content>
+                  <AnchorPane fx:id="anchorPane" minHeight="1850.0" minWidth="0.0" prefHeight="1850.0" prefWidth="1490.0" style="-fx-background-color: transparent;">
+                     <children>
+
+                        <Pane fx:id="PaneAnnunci" layoutX="0.0" layoutY="0.0" minHeight="1800.0" prefHeight="1800.0" prefWidth="1000.0" style="-fx-background-color: rgba(20, 88, 88, 0.85); -fx-background-radius: 15;">
+                           <children>
+
+                              <Pane fx:id="paneImageAnnuncio" layoutX="20.0" layoutY="20.0" prefHeight="450.0" prefWidth="960.0" style="-fx-background-color: #0f4040; -fx-background-radius: 10;">
+                                 <children>
+                                    <ScrollPane fx:id="scrollImageAnnuncio" hbarPolicy="NEVER" layoutX="10.0" layoutY="10.0" prefHeight="430.0" prefWidth="940.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER" />
+                                    <Button fx:id="btnIndietroImage" layoutX="15.0" layoutY="200.0" mnemonicParsing="false" onAction="#handlerTastoIndietro" style="-fx-background-color: rgba(255,255,255,0.7); -fx-background-radius: 30; -fx-cursor: hand;">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image><Image url="@../../images/icons8-back-button-24.png" /></image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnAvantiImage" layoutX="895.0" layoutY="200.0" mnemonicParsing="false" onAction="#handlerTastoAvanti" style="-fx-background-color: rgba(255,255,255,0.7); -fx-background-radius: 30; -fx-cursor: hand;">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image><Image url="@../../images/icons8-forward-button-24.png" /></image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </Pane>
+
+                              <Label fx:id="labelInfoTitolo" layoutX="25.0" layoutY="490.0" prefHeight="40.0" prefWidth="700.0" text="Titolo immobile" textFill="#f3f6f4">
+                                 <font><Font name="System Bold" size="28.0" /></font>
+                              </Label>
+                              <Label fx:id="tipoImmobileLbl" layoutX="25.0" layoutY="535.0" prefHeight="25.0" prefWidth="150.0" text="Appartamento" textFill="#b2d8d8">
+                                 <font><Font name="System Bold" size="16.0" /></font>
+                              </Label>
+                              <Label fx:id="indirizzoLbl" layoutX="180.0" layoutY="535.0" prefHeight="25.0" prefWidth="500.0" text="Indirizzo" textFill="#b2d8d8">
+                                 <font><Font size="16.0" /></font>
+                              </Label>
+
+                              <Pane fx:id="paneInfoPrezzo" layoutX="760.0" layoutY="490.0" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #34D058; -fx-background-radius: 10;">
+                                 <children>
+                                    <Label fx:id="labelPrezzo" alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="60.0" prefWidth="220.0" text="€ Prezzo" textFill="WHITE">
+                                       <font><Font name="System Bold" size="26.0" /></font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+
+                              <Line endX="910.0" endY="0.0" layoutX="25.0" layoutY="580.0" stroke="#b2d8d8" strokeWidth="0.5" />
+
+                              <Pane fx:id="paneInfoForniture" layoutX="25.0" layoutY="600.0" prefHeight="200.0" prefWidth="950.0" style="-fx-background-color: rgba(0,0,0,0.15); -fx-background-radius: 10;">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="10.0" text="Caratteristiche:" textFill="WHITE"><font><Font name="System Bold" size="20.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="20.0" layoutY="60.0"><image><Image url="@../../images/icons8-pianta-80.png" /></image></ImageView>
+                                    <Label fx:id="numeroStanzeLbl" layoutX="65.0" layoutY="65.0" prefWidth="25.0" text="0" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <Label layoutX="90.0" layoutY="67.0" prefWidth="60.0" text="Stanze" textFill="#b2d8d8"><font><Font size="15.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="170.0" layoutY="60.0"><image><Image url="@../../images/icons8-bagno-90.png" /></image></ImageView>
+                                    <Label fx:id="numeroBagniLbl" layoutX="215.0" layoutY="65.0" prefWidth="25.0" text="0" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <Label layoutX="240.0" layoutY="67.0" prefWidth="50.0" text="Bagni" textFill="#b2d8d8"><font><Font size="15.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="310.0" layoutY="60.0"><image><Image url="@../../images/icons8-superficie-80.png" /></image></ImageView>
+                                    <Label fx:id="superficieLbl" layoutX="355.0" layoutY="65.0" prefWidth="60.0" text="0" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <Label layoutX="415.0" layoutY="67.0" prefWidth="30.0" text="m²" textFill="#b2d8d8"><font><Font size="15.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="465.0" layoutY="60.0"><image><Image url="@../../images/icons8-scale-80.png" /></image></ImageView>
+                                    <Label fx:id="numeroPianoLbl" layoutX="510.0" layoutY="65.0" prefWidth="30.0" text="0" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <Label layoutX="540.0" layoutY="67.0" prefWidth="50.0" text="Piano" textFill="#b2d8d8"><font><Font size="15.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="620.0" layoutY="60.0"><image><Image url="@../../images/icons8-elevator-doors-100.png" /></image></ImageView>
+                                    <Label fx:id="ascensoreLbl" layoutX="665.0" layoutY="67.0" prefWidth="250.0" text="Ascensore" textFill="WHITE"><font><Font size="15.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="20.0" layoutY="130.0"><image><Image url="@../../images/icons8-soggiorno-50.png" /></image></ImageView>
+                                    <Label fx:id="numeroSoggiorniLbl" layoutX="65.0" layoutY="135.0" prefWidth="25.0" text="0" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <Label layoutX="90.0" layoutY="137.0" prefWidth="70.0" text="Soggiorni" textFill="#b2d8d8"><font><Font size="15.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="170.0" layoutY="130.0"><image><Image url="@../../images/icons8-cucina-50.png" /></image></ImageView>
+                                    <Label fx:id="numCucineLbl" layoutX="215.0" layoutY="135.0" prefWidth="25.0" text="0" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <Label layoutX="240.0" layoutY="137.0" prefWidth="60.0" text="Cucine" textFill="#b2d8d8"><font><Font size="15.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="310.0" layoutY="130.0"><image><Image url="@../../images/icons8-buffet-50.png" /></image></ImageView>
+                                    <Label fx:id="arredamentoLbl" layoutX="355.0" layoutY="137.0" prefWidth="150.0" text="Arredamento" textFill="WHITE"><font><Font size="15.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="520.0" layoutY="130.0"><image><Image url="@../../images/icons8-efficienza-energetica-a-48.png" /></image></ImageView>
+                                    <Label layoutX="565.0" layoutY="137.0" prefWidth="50.0" text="Classe:" textFill="#b2d8d8"><font><Font size="15.0" /></font></Label>
+                                    <Label fx:id="classeEnergeticaLbl" layoutX="615.0" layoutY="135.0" prefWidth="30.0" text="A" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="680.0" layoutY="130.0"><image><Image url="@../../images/icons8-soldi-50.png" /></image></ImageView>
+                                    <Label fx:id="speseCondominialiLbl" layoutX="725.0" layoutY="135.0" prefWidth="60.0" text="0" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                    <Label layoutX="785.0" layoutY="137.0" prefWidth="120.0" text="€ Spese/mese" textFill="#b2d8d8"><font><Font size="15.0" /></font></Label>
+                                 </children>
+                              </Pane>
+
+                              <Pane fx:id="paneInfoDescrizione" layoutX="25.0" layoutY="820.0" prefHeight="170.0" prefWidth="950.0" style="-fx-background-color: transparent;">
+                                 <children>
+                                    <Label layoutX="0.0" layoutY="0.0" text="Descrizione" textFill="WHITE">
+                                       <font><Font name="System Bold" size="20.0" /></font>
+                                    </Label>
+                                    <Label fx:id="infoDescrizioneLbl" alignment="TOP_LEFT" layoutX="0.0" layoutY="40.0" prefHeight="130.0" prefWidth="950.0" text="Label descrizione..." textFill="#f3f6f4" wrapText="true">
+                                       <font><Font size="16.0" /></font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+
+                              <Line endX="910.0" endY="0.0" layoutX="25.0" layoutY="1010.0" stroke="#b2d8d8" strokeWidth="0.5" />
+
+                              <Label layoutX="25.0" layoutY="1030.0" text="Mappa e Posizione" textFill="WHITE">
+                                 <font><Font name="System Bold" size="22.0" /></font>
+                              </Label>
+                              <WebView fx:id="webViewMap" layoutX="25.0" layoutY="1070.0" prefHeight="480.0" prefWidth="950.0" />
+
+                           </children>
+                        </Pane>
+
+                        <Pane fx:id="paneInfoAgente" layoutX="1030.0" layoutY="0.0" prefHeight="450.0" prefWidth="440.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 15, 0, 0, 5);">
+                           <children>
+                              <Label layoutX="30.0" layoutY="25.0" text="Sei interessato a questo immobile?" textFill="#145858">
+                                 <font><Font name="System Bold" size="22.0" /></font>
+                              </Label>
+                              <Label layoutX="30.0" layoutY="55.0" text="Contatta l'agente immobiliare." textFill="#666666">
+                                 <font><Font size="15.0" /></font>
+                              </Label>
+
+                              <Button fx:id="btnPrenotaVisita" disable="true" layoutX="30.0" layoutY="100.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="380.0" style="-fx-background-color: #145858; -fx-background-radius: 10; -fx-cursor: hand;" text="Prenota la tua visita" textAlignment="CENTER" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image><Image url="@../../images/icons8-calendario-50.png" /></image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font><Font name="System Bold" size="18.0" /></font>
+                              </Button>
+
+                              <Line endX="380.0" endY="0.0" layoutX="30.0" layoutY="185.0" stroke="#dddddd" />
+
+                              <ImageView fx:id="imageAgente" fitHeight="80.0" fitWidth="80.0" layoutX="30.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                                 <clip><Circle centerX="40" centerY="40" radius="40" /></clip>
+                                 <image><Image url="@../../images/icons8-imgdefault-48.png" /></image>
+                              </ImageView>
+
+                              <Label fx:id="labelNomeAgente" layoutX="125.0" layoutY="220.0" prefHeight="25.0" prefWidth="285.0" text="Nome Agente" textFill="#333333">
+                                 <font><Font name="System Bold" size="18.0" /></font>
+                              </Label>
+
+                              <Pane fx:id="paneLasciaValutazione" layoutX="120.0" layoutY="250.0" prefHeight="40.0" prefWidth="250.0">
+                              </Pane>
+
+                              <Button fx:id="btnLasciaRecensione" disable="true" layoutX="30.0" layoutY="360.0" mnemonicParsing="false" onAction="#apriLasciRecensione" prefHeight="45.0" prefWidth="380.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #cccccc; -fx-border-radius: 8; -fx-background-radius: 8; -fx-cursor: hand;" text="Lascia la tua recensione all'agente" textFill="#555555">
+                                 <font><Font name="System Bold" size="15.0" /></font>
+                              </Button>
+                           </children>
+                        </Pane>
+
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

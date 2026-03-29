@@ -1,0 +1,15 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Çº­ƒþÿÿÿÿ8ø“º¬Û2
+M	java:S106°"+Replace this use of System.out by a logger.(ýÊÌ¼ùÿÿÿÿ8Þ”º¬Û2
+H	java:S106²"+Replace this use of System.out by a logger.(×Š¼é8ß”º¬Û2
+Y	java:S125¹"<This block of commented-out lines of code should be removed.(Ò™É8à”º¬Û2
+I
+java:S1602¨",Remove useless curly braces around statement(á×æP8ô”º¬Û2
+I
+java:S1602±",Remove useless curly braces around statement(øò 28ø”º¬Û2
+J
+java:S1602³",Remove useless curly braces around statement(š†¦®8ø”º¬Û2
+Z
+java:S1144“"<Remove this unused private "emailVecchiaUgualeNuova" method.(Ÿü„å8ú”º¬Û2
+N
+java:S1144—"+Remove this unused private "exists" method.(³‘üôøÿÿÿÿ8ú”º¬Û2

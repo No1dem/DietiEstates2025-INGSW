@@ -1,0 +1,23 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(«ÖËõ8µ×áÕÅ2
+V
+java:S1118":Add a private constructor to hide the implicit public one.(ËÖh8¹×áÕÅ2
+x
+java:S1128"VRemove this unused import 'com.example.dietiEstates.dto.GestoreAgenziaImmobiliareDTO'.(İî¦ùÿÿÿÿ8××áÕÅ2
+w
+java:S1128"URemove this unused import 'com.example.dietiEstates.model.GestoreAgenziaImmobiliare'.(ÌßŒúÿÿÿÿ8××áÕÅ2
+y
+java:S1128"WRemove this unused import 'com.example.dietiEstates.factory.HttpRequestBuilderFactory'.(ø¥Ê‰ıÿÿÿÿ8××áÕÅ2
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8××áÕÅ2
+X
+java:S1128	"6Remove this unused import 'java.net.http.HttpRequest'.(ş€ŠÍşÿÿÿÿ8××áÕÅ2
+Y
+java:S1128
+"7Remove this unused import 'java.net.http.HttpResponse'.(’ûÌûÿÿÿÿ8××áÕÅ2
+N
+java:S1068",Remove this unused "BASE_URL" private field.(ğÕ ‚ıÿÿÿÿ8Ø×áÕÅ2
+G
+java:S1068"*Remove this unused "client" private field.(öŠ€8Ø×áÕÅ2
+M
+java:S1068"0Remove this unused "objectMapper" private field.(œ‡¨ 8Ø×áÕÅ2

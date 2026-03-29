@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+
+<AnchorPane prefHeight="614.0" prefWidth="620.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- Collegamento CSS -->
+    <stylesheets>
+        <URL value="@../../css/style.css"/>
+    </stylesheets>
+
+    <children>
+        <VBox layoutX="20" layoutY="20" prefWidth="600" spacing="10">
+
+            <!-- Titolo -->
+            <Label text="FAQ - DietiEstates25"
+                   styleClass="title-page"/>
+
+            <!-- Scrollable content -->
+            <ScrollPane fitToWidth="true" prefHeight="549.0" prefWidth="600.0"
+                        styleClass="custom-scroll">
+                <content>
+                    <VBox spacing="12" styleClass="content-box">
+
+                        <!-- Sezione Account -->
+                        <Label text="Account e Impostazioni" styleClass="section-title"/>
+
+                        <Label text="1. Come posso recuperare la mia password?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="Se dimentichi la password, accedi alla tua dashboard e seleziona 'Modifica Profilo'. Troverai un link rapido per reimpostarla in pochi passaggi."
+                               styleClass="section-text"/>
+
+                        <Label text="2. È necessaria la registrazione?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="Sì, per utilizzare tutte le funzionalità dell’app, tra cui prenotare visite e salvare ricerche, è necessario creare un account gratuito."
+                               styleClass="section-text"/>
+
+                        <!-- Sezione Annunci -->
+                        <Label text="Gestione Annunci" styleClass="section-title"/>
+
+                        <Label text="3. Posso aggiornare un annuncio già pubblicato?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="Al momento gli annunci pubblicati non possono essere modificati direttamente, ma puoi rimuoverli e creare una nuova versione aggiornata, oppure gestirli nella sezione 'Annunci Recenti'."
+                               styleClass="section-text"/>
+
+                        <Label text="4. Come pubblicare un annuncio?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="Gli agenti registrati possono creare un annuncio dalla propria dashboard selezionando 'Crea Annuncio'. Inserisci informazioni dettagliate e carica foto di qualità per attirare più interessati."
+                               styleClass="section-text"/>
+
+                        <Label text="5. Ci sono costi per la pubblicazione?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="La pubblicazione degli annunci è completamente gratuita per tutti gli agenti verificati sulla piattaforma."
+                               styleClass="section-text"/>
+
+                        <!-- Sezione Assistenza -->
+                        <Label text="Supporto e Problemi Tecnici" styleClass="section-title"/>
+
+                        <Label text="6. Cosa fare se l’app non funziona correttamente?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="In caso di malfunzionamenti, prova a riavviare o reinstallare l’app. Se il problema persiste, contatta il supporto clienti tramite il form dedicato o la chat dell’app."
+                               styleClass="section-text"/>
+
+                        <Label text="7. Come segnalare annunci sospetti?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="Se trovi un annuncio irregolare o sospetto, usa il pulsante 'Segnala annuncio'. Il nostro team verificherà la situazione e prenderà provvedimenti se necessario."
+                               styleClass="section-text"/>
+
+                        <!-- Sezione Uso App -->
+                        <Label text="Navigazione e Ricerca" styleClass="section-title"/>
+
+                        <Label text="8. Posso vedere le ricerche passate?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="Sì, tutte le tue ricerche recenti vengono salvate automaticamente e possono essere consultate nella sezione “Ricerche recenti” della tua home."
+                               styleClass="section-text"/>
+
+                        <Label text="9. Come prenotare una visita?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="Ogni annuncio dispone di un pulsante 'Richiedi visita'. Compilando la richiesta, l’agente incaricato riceverà la notifica e ti contatterà per fissare l’appuntamento."
+                               styleClass="section-text"/>
+
+                        <Label text="10. Posso vedere gli immobili su una mappa?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="Durante la ricerca, la mappa integrata mostra esattamente la posizione di ciascun immobile, permettendoti di visualizzare distanze e quartieri circostanti."
+                               styleClass="section-text"/>
+
+                        <Label text="11. Come trovare un immobile?" styleClass="section-title"/>
+                        <Label wrapText="true"
+                               text="Utilizza la barra di ricerca nella pagina principale per inserire città, quartiere, prezzo o caratteristiche specifiche. I filtri avanzati ti aiutano a individuare velocemente gli immobili più adatti alle tue esigenze."
+                               styleClass="section-text"/>
+
+
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+        </VBox>
+
+    </children>
+</AnchorPane>
