@@ -17,5 +17,5 @@ public interface UserDao {
 
     LoginUtenteResponse login(String email, String password) throws SQLException;
 
-    String getPassword(String email) throws SQLException;
+    String getPassword(String email) throws SQLException; //* */
 }
